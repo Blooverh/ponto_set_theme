@@ -1,0 +1,9 @@
+<header>
+  <a href="{{routes.root_url}}"><img src="{{'PontoSetLogo.jpg' | asset_url }}" alt="ponto set logo"></a>
+  <!-- Main menu linklist from the navigation tab on shopify -->
+  <ul>
+    {% for link in linklists.main-menu.links -%}
+      {{ link.title | link_to: link.url }}
+    {%- endfor %}
+  </ul>
+</header>
