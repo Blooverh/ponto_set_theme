@@ -2,6 +2,7 @@
   <!--Used for shopify to inject scripts and plugins as well -->
   <head>
     {{ content_for_header }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
