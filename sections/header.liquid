@@ -1,0 +1,57 @@
+<!-- <header>
+<a href="{{routes.root_url}}"><img src="{{'PontoSetLogo.jpg' | asset_url }}" alt="ponto set logo"></a>
+//Main menu linklist from the navigation tab on shopify
+<ul>
+{% for link in linklists.main-menu.links -%}
+{{ link.title | link_to: link.url }}
+{%- endfor %}
+</ul>
+
+</header> -->
+<!--
+This part since it is in a section will allow on theme editor the addition of 
+certain images and navigation and header modifications without the need for code 
+{% endcomment %}-->{% if section.settings.message %}
+  {% comment %} <!-- whether style block should be rendered or not based on the message condition --> {% endcomment %}
+    <style>
+{% if section.settings.logo != blank %}
+  .site-header_logo-image {
+    max-width: {{ section.settings.logo_max_width | escape }}
+    px;
+  }
+{% endif %}
+
+{% if section.settings.align_logo == 'left' %}
+  .site-header_logo-image {
+    margin: 5;
+  }
+{% endif %}
+</style>{% endif %}
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+    {% if section.settings.message %}
+        {% if section.settings.home_page_only == false or request.page_type== 'index' %}
+            <style>
+                .announcement-bar {
+                    background-color: {{ section.settings.color_bg }}; /* theme settings to set anouncement bar color*/
+                }
+
+                .announcement-bar--link:hover {
+                    /* allow to choose color from theme editor to announcement bar */
+                    {% assign brightness = section.settings.color_bg | color_brightness %}
+                    
+                    {% if brightness <= 192 %}
+                        {% assign lightenAmount = 255 | minus: brightness | times: 8 %}
+                        background-color: {{ section.settings.color_bg }};
+
+                    {% else %}
+                        {% assign darkenAmount = 255 | divided_by: brightness | times: 8  %}
+                        background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+                    {% endif %}
+                }
+
+                .announcement-bar_message{
+                    color: {{ section.settings.color_text }};
+                }
+            </style>
+</div>
