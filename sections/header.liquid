@@ -14,16 +14,25 @@
 
     <ul class="header-nav">
       {% for link in section.settings.navigation.links %}
-        <li>
-          <a href="{{ link.url }}">
+        <li class="header-nav-item">
+          <a class="header-nav-anchor" href="{{ link.url }}">
             {{ link.title }}
           </a>
         </li>
       {% endfor %}
     </ul>
   </div>
-
 </div>
+
+<div class="header-nav-overlay"></div>
+
+<!-- Might need to delete this -->
+<style>
+  .header-logo {
+    max-width: {{ section.settings.logo_width }}
+    px;
+  }
+</style>
 
 {% schema %}
   {

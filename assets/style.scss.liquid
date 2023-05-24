@@ -105,4 +105,25 @@ body {
     background: $bg;
     width: 90%;
     max-width: 300px;
+    z-index: 10;
+}
+
+.header-nav-overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9;
+}
+
+.header-nav-item {
+    border-bottom: 1px solid black;
+}
+
+.header-nav-anchor {
+    display: block;
+    padding: 20px;
+    color: $text;
 }
