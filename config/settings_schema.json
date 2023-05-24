@@ -35,6 +35,12 @@
         "id": "text_color",
         "label": "Text Color",
         "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#dddddd"
       }
     ]
   }

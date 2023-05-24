@@ -4,6 +4,7 @@ $fadeOn: left 0s, opacity 0.4;
 $width: {{ settings.page_width }}px;
 $bp: 960px;
 $bg: {{ settings.background_color }}; /* background color */
+$border: {{ settings.border_color }};
 $text: {{ settings.text_color }};
 
 
@@ -106,20 +107,36 @@ body {
     width: 90%;
     max-width: 300px;
     z-index: 10;
+    transform: translateX(-100%);
+    transition: 0.4s transform;
+    .nav-active & {
+        transform: none;
+    }
 }
 
 .header-nav-overlay {
     position: fixed;
     top:0;
-    left:0;
+    width: 100%;
+    height: 100%;
     right:0;
     bottom:0;
     background: rgba(0,0,0,0.7);
     z-index: 9;
+    opacity: 0;
+    left: -100%;
+    transition: $fadeOff;
+
+
+    .nav-active & {
+        left: 0;
+        opacity: 1;
+        transition: $fadeOn;
+    }
 }
 
 .header-nav-item {
-    border-bottom: 1px solid black;
+    border-bottom: 1px $border;
 }
 
 .header-nav-anchor {
