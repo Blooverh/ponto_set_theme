@@ -1,6 +1,7 @@
 {
   "current": {
-    "page_width": 1200,
+    "page_width": 950,
+    "text_color": "#faa902",
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
