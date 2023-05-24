@@ -28,6 +28,10 @@
   document.querySelector('.header-hamburger').addEventListener('click', () => {
     document.querySelector('.header').classList.toggle('nav-active');
   });
+
+  document.querySelector('.header-nav-overlay').addEventListener('click', () => {
+    document.querySelector('.header').classList.remove('nav-active');
+  });
 </script>
 
 <div class="header-nav-overlay"></div>
