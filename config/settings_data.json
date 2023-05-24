@@ -131,7 +131,7 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/PontoSetLogo.jpg",
-          "logo_width": 20,
+          "logo_width": 0,
           "navigation": "main-menu"
         }
       }
@@ -267,21 +267,7 @@
       "cart_type": "notification",
       "show_vendor": false,
       "show_cart_note": false,
-      "cart_drawer_collection": "",
-      "sections": {
-        "main-password-header": {
-          "type": "main-password-header",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        },
-        "main-password-footer": {
-          "type": "main-password-footer",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        }
-      }
+      "cart_drawer_collection": ""
     }
   }
 }
