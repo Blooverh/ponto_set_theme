@@ -3,7 +3,9 @@
         "name":"theme_info",
         "theme_name":"ponto_set",
         "theme_version":"1.0.0",
-        "theme_author":"Diogo Aires"
+        "theme_author":"Diogo Aires",
+        "theme_documentation_url": "",
+        "theme_support_email": "espadinsky@gmail.com"
     },
 
     {
