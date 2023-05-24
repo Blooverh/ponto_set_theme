@@ -1,18 +1,18 @@
-header {
-  position: fixed;
-  width: 100px;
-  height: 50px;
-  top: 0;
-  left: 0;
-  background-color: white;
-  z-index: 100;
-
+/* allows to fade in and out an element*/
+$fadeOff: left 0s 0.4s, opacity 0.4s;
+$fadeOn: left 0s, opacity 0.4;
+$width: {{ settings.page_width }}
+px;
+$bp: 960px;
+.width {
+  max-width: $width;
+  width: cal(100% - 40px);
+  margin: 0 auto;
+  @media(min-width: $bp) {
+    width: calc(100% - 80px);
+  }
 }
 
-header a img {
-  max-width: 100%;
-  max-height: 100%;
-}
 
 body {
   /* code for background image  */

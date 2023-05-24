@@ -1,0 +1,23 @@
+[
+    {
+        "name":"theme_info",
+        "theme_name":"ponto_set",
+        "theme_version":"1.0.0",
+        "theme_author":"Diogo Aires"
+    },
+
+    {
+        "name":"page settings",
+        "settings": [
+            {
+                "type": "range",
+                "id": "page_width",
+                "label":"Page width",
+                "default": 1200,
+                "min": 800,
+                "max":1600,
+                "step":50
+            }
+        ]
+    }
+]

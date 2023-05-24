@@ -1,9 +1,26 @@
-<header>
+<div class="width">
   <a href="{{routes.root_url}}"><img src="{{'PontoSetLogo.jpg' | asset_url }}" alt="ponto set logo"></a>
-  <!-- Main menu linklist from the navigation tab on shopify -->
-  <ul>
-    {% for link in linklists.main-menu.links -%}
-      {{ link.title | link_to: link.url }}
-    {%- endfor %}
-  </ul>
-</header>
+</div>
+
+{% schema %}
+  {
+    "name": "header",
+    "tag": "header",
+    "class": "header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }, {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo width",
+        "default": 100,
+        "min": 20,
+        "max": 300,
+        "step": 5
+      }
+    ]
+  }
+{% endschema %}
