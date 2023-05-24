@@ -21,5 +21,22 @@
                 "step":50
             }
         ]
+    },
+    {
+        "name":"Colors",
+        "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label":"Background Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label":"Text Color",
+                "default": "#111111"
+            }
+        ]
     }
 ]

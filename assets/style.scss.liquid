@@ -1,10 +1,12 @@
 /* GLOBAL STYLE SHEET DESKTOP AND LAPTOP */
-
-/* allows to fade in and out an element*/
-$fadeOff: left 0s 0.4s, opacity 0.4s;
+$fadeOff: left 0s 0.4s, opacity 0.4s; /* allows to fade in and out an element*/
 $fadeOn: left 0s, opacity 0.4;
 $width: {{ settings.page_width }}px;
 $bp: 960px;
+$bg: {{ settings.background_color }}; /* background color */
+$text: {{ settings.text_color }};
+
+
 /* Reset */
 
 *{
@@ -26,7 +28,22 @@ li {
     list-style: none;
 }
 
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+    background: transparent;
+    -webkit-appearence: none;
+    -moz-appearence: none;
+    -o-appearence: none;
+    appearence: none;
+}
+
 body {
+    background: $bg;
+    color: $text;
     font-size: 100%;
     font-family: "Gill Sans", sans-serif;
 }
@@ -43,6 +60,48 @@ body {
 }
 
 /* Header logo css */
+
+.header{
+    background: $bg;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-hamburger {
+    width: 32px;
+    display: block;
+}
+
+.header-hamburger-bar {
+    height: 2px;
+    width: 100%;
+    background: $text;
+    display: block;
+    border-radius: 2px;
+
+    /* 2 header bars margin top */
+    & + & {
+        margin-top: 6px;
+    }
+}
+
 .header-logo {
   display: block;
+}
+
+/* Turn navigation title into a drawer  */
+
+.header-nav {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    overflow: auto;
+    background: $bg;
+    width: 90%;
+    max-width: 300px;
 }
