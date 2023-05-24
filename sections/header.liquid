@@ -2,6 +2,16 @@
   <a href="/" class="header-logo">
     <img src="{{section.settings.logo | img_url: 'master' }}" alt="ponto set logo">
   </a>
+
+  <ul class="header-nav">
+    {% for link in section.settings.navigation.links %}
+      <li>
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <style>
@@ -29,6 +39,11 @@
         "min": 0,
         "max": 300,
         "step": 5
+      }, {
+        "type:": "link_list",
+        "id": "navigation",
+        "label": "Navigation menu",
+        "default": "main-menu"
       }
     ]
   }
