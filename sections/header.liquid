@@ -24,9 +24,11 @@
   </div>
 </div>
 
-{% javascript %}
-  <script src="{{ 'header.js' | asset_url }}"></script>
-{% endjavascript %}
+<script>
+  document.querySelector('.header-hamburger').addEventListener('click', () => {
+    document.querySelector('.header').classList.toggle('nav-active');
+  });
+</script>
 
 <div class="header-nav-overlay"></div>
 
