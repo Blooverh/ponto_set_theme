@@ -69,8 +69,8 @@ body {
     padding: 100px 0; */
 
     background: #ddd;
-  color: white;
-  padding: 200px 0;
+    color: white;
+    padding: 200px 0;
 }
 
 /* Header section */
@@ -100,12 +100,11 @@ body {
     background: $text;
     display: block;
     border-radius: 2px;
-
-    /* 2 header bars margin top */
+  
     & + & {
-        margin-top: 6px;
+      margin-top: 6px;
     }
-}
+  }
 
 .header-logo {
   display: block;
@@ -115,8 +114,8 @@ body {
 
 .header-nav {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100%;
     overflow: auto;
     background: $bg;
@@ -125,76 +124,74 @@ body {
     z-index: 10;
     transform: translateX(-100%);
     transition: 0.4s transform;
-
-    @media (min-width: $bp){
-        position: static;
-        display: inline-flex;
-        align-items: center;
-        gap: 60px;
-        width: auto;
-        max-width: none;
-        height: auto;
-        overflow: initial;
-        background: transparent;
-        transform: none;
+  
+    @media (min-width: $bp) {
+      position: static;
+      display: inline-flex;
+      align-items: center;
+      gap: 50px;
+      width: auto;
+      max-width: none;
+      height: auto;
+      overflow: initial;
+      background: transparent;
+      transform: none;
     }
-
+  
     .nav-active & {
-        transform: none;
+      transform: none;
     }
-}
+  }
 
-.header-nav-overlay {
+  .header-nav-overlay {
     position: fixed;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
-    right:0;
-    bottom:0;
     background: rgba(0,0,0,0.7);
     z-index: 9;
     opacity: 0;
     left: -100%;
     transition: $fadeOff;
-
-    @media (min-width: $bp){
-        display: none;
+  
+    @media (min-width: $bp) {
+      display: none;
     }
-
+  
     .nav-active & {
-        left: 0;
-        opacity: 1;
-        transition: $fadeOn;
-
-        @media (min-width: $bp){
-            display: none;
-        }
+      left: 0;
+      opacity: 1;
+      transition: $fadeOn;
+  
+      @media (min-width: $bp) {
+        display: none;
+      }
     }
-}
+  }
 
 .header-nav-item {
     padding: 20px;
     border-bottom: 1px solid $border;
-
+  
     @media (min-width: $bp) {
-        padding: 0;
-        border: none;
-        position: relative;
-      } 
-}
+      padding: 0;
+      border: none;
+      position: relative;
+    } 
+  }
 
 .header-nav-anchor {
     display: block;
     color: $text;
     font-size: 20px;
-
+  
     @media (min-width: $bp) {
-        display: inline-block;
-        padding: 20px 0;
-        margin: -20px 0;
-        font-size: 18px;
-      } 
-}
+      display: inline-block;
+      padding: 20px 0;
+      margin: -20px 0;
+      font-size: 18px;
+    } 
+  }
 
 .header-sub {
     padding: 0 20px;
