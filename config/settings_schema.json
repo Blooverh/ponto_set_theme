@@ -38,6 +38,12 @@
       },
       {
         "type": "color",
+        "id": "medium_text_color",
+        "label": "Medium Text Color",
+        "default": "#5e5e5e"
+      },
+      {
+        "type": "color",
         "id": "border_color",
         "label": "Border Color",
         "default": "#dddddd"

@@ -6,6 +6,7 @@ $bp: 960px;
 $bg: {{ settings.background_color }}; /* background color */
 $border: {{ settings.border_color }};
 $text: {{ settings.text_color }};
+$medium_text: {{ settings.medium_text_color }}
 
 
 /* Reset */
@@ -143,4 +144,25 @@ body {
     display: block;
     padding: 20px;
     color: $text;
+}
+
+.header-sub {
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+.header-sub-item{
+    display: block;
+    & + & {
+        margin-top: 5px;
+    }
+}
+
+.header-sub-anchor {
+    color: $medium_text;
+    transition: 0.2s color;
+
+    &:hover {
+        color: $text;
+    }
 }
