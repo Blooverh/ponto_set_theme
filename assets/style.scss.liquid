@@ -101,7 +101,7 @@ body {
 
 .header-logo {
   display: block;
-  width: 100%;
+  width: 75%;
 }
 
 /* Turn navigation title into a drawer  */
@@ -118,6 +118,20 @@ body {
     z-index: 10;
     transform: translateX(-100%);
     transition: 0.4s transform;
+
+    @media (min-width: $bp){
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        gap: 60px;
+        width: auto;
+        max-width: none;
+        height: auto;
+        overflow: initial;
+        background: transparent;
+        transform: none;
+    }
+
     .nav-active & {
         transform: none;
     }
@@ -136,11 +150,18 @@ body {
     left: -100%;
     transition: $fadeOff;
 
+    @media (min-width: $bp){
+        display: none;
+    }
 
     .nav-active & {
         left: 0;
         opacity: 1;
         transition: $fadeOn;
+
+        @media (min-width: $bp){
+            display: none;
+        }
     }
 }
 
