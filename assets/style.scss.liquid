@@ -62,11 +62,15 @@ body {
 }
 
 .hero {
-    background-image: url('{{ 'MainPageBanner.png' | asset_url }}');
+    /* background-image: url('{{ 'MainPageBanner.png' | asset_url }}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 0;
+    padding: 100px 0; */
+
+    background: #ddd;
+  color: white;
+  padding: 200px 0;
 }
 
 /* Header section */
@@ -257,7 +261,7 @@ body {
 }
 
 .header-sub-anchor {
-    color: $medium_text;
+    color: $medium_text_color;
     transition: 0.2s color;
 
     &:hover {
