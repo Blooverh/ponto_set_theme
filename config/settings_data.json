@@ -131,7 +131,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "padding": 24,
+          "padding": 60,
           "logo": "shopify:\/\/shop_images\/PontoSetLogo.jpg",
           "logo_width": 0,
           "navigation": "main-menu"
