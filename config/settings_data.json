@@ -2,7 +2,7 @@
   "current": {
     "page_width": 1150,
     "text_color": "#faa902",
-    "checkout_header_image": "shopify:\/\/shop_images\/MainPageBanner.png",
+    "checkout_body_background_image": "shopify:\/\/shop_images\/MainPageBanner.png",
     "logo_width": 90,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#121212",
