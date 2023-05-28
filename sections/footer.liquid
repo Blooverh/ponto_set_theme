@@ -1,3 +1,43 @@
+
+{% comment %} Allows user to display mutiple items in footer section with
+different sizes so it fits page width {% endcomment %}
+{%- assign inline_list = false -%}
+{%- case section.blocks.size -%}
+  {%- when 1 -%}
+    {%- assign footer_item = 'site-footer__item--full-width' -%}
+    {%- assign inline_list = true -%}
+  {% when 2 %}
+    {% assign footer_item = 'site-footer__item--one-half' %}
+    {% assign inline_list = true %}
+  {% when 3 %}
+    {% assign footer_item = 'site-footer__item--one-third' %}
+    {% assign inline_list = true %}
+  {% when 4 %}
+    {% assign footer_item = 'site-footer__item--one-quarter' %}
+    {% assign inline_list = true %}
+  {% when 5 %}
+    {% assign footer_item = 'site-footer__item--one-fifth' %}
+    {% assign inline_list = true %}
+{% endcase %}
+
+{% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
+{%- assign footer_text_color = section.settings.color_footer_text -%}
+{%- assign footer_text_color_brightness = section.settings.color_footer_text | color_brightness -%}
+{%- if footer_text_color_brightness <= 26 -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 25 -%}
+{%- elsif footer_text_color_brightness <= 65 -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 15 -%}
+{%- else -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_darken: 10 -%}
+{%- endif -%}
+
+<style>
+  .site-footer__hr{
+    border-bottom: 1px solid {{section.settings. color_footer_bg | color_darken: 10 }};
+  }
+</style>
+
+
 {% schema %}
   {
     "name": "Section name",
