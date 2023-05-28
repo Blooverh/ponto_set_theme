@@ -1,6 +1,6 @@
 {
   "current": {
-    "page_width": 1600,
+    "page_width": 1050,
     "text_color": "#faa902",
     "checkout_body_background_image": "shopify:\/\/shop_images\/MainPageBanner.png",
     "logo_width": 90,
@@ -132,9 +132,9 @@
       "header": {
         "type": "header",
         "settings": {
-          "padding": 13,
+          "padding": 17,
           "logo": "shopify:\/\/shop_images\/PontoSetLogo.jpg",
-          "logo_width": 0,
+          "logo_width": 300,
           "navigation": "main-menu"
         }
       }
