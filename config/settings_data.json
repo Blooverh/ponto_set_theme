@@ -134,7 +134,7 @@
         "settings": {
           "padding": 13,
           "logo": "shopify:\/\/shop_images\/PontoSetLogo.jpg",
-          "logo_width": 150,
+          "logo_width": 0,
           "navigation": "main-menu"
         }
       }
