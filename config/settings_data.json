@@ -141,28 +141,20 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "8679d71b-9def-46f1-a46c-60b2b9d93499": {
+          "322b9e31-44d1-43fe-80a8-64820c0f2ec1": {
             "type": "link_list",
             "settings": {
               "title": "Serviço ao Cliente",
               "menu": "footer"
             }
-          },
-          "7e790f82-a27d-4bf4-bf8f-9e5131abaf24": {
-            "type": "link_list",
-            "settings": {
-              "title": "Sobre Nós",
-              "menu": "footer"
-            }
           }
         },
         "block_order": [
-          "8679d71b-9def-46f1-a46c-60b2b9d93499",
-          "7e790f82-a27d-4bf4-bf8f-9e5131abaf24"
+          "322b9e31-44d1-43fe-80a8-64820c0f2ec1"
         ],
         "settings": {
-          "color_footer_bg": "#F5F5F5",
-          "color_footer_text": "#FAA902"
+          "color_footer_bg": "#f5f5f5",
+          "color_footer_text": "#faa902"
         }
       }
     },
