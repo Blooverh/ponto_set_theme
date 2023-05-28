@@ -147,10 +147,18 @@
               "title": "Serviço ao Cliente",
               "menu": "footer"
             }
+          },
+          "2559b215-6d2d-452d-8206-43f8d9e08dff": {
+            "type": "link_list",
+            "settings": {
+              "title": "Sobre Nos",
+              "menu": "footer-menu-1"
+            }
           }
         },
         "block_order": [
-          "322b9e31-44d1-43fe-80a8-64820c0f2ec1"
+          "322b9e31-44d1-43fe-80a8-64820c0f2ec1",
+          "2559b215-6d2d-452d-8206-43f8d9e08dff"
         ],
         "settings": {
           "color_footer_bg": "#f5f5f5",
