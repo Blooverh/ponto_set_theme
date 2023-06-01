@@ -13,6 +13,14 @@
     {% section 'header' %}
     {{ content_for_layout }}
 
+    <main
+      class="main-content js-focus-hidden"
+      id="MainContent"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
     {% section 'footer' %}
     {{ content_for_layout }}
   </body>
