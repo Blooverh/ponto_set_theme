@@ -74,12 +74,7 @@ different sizes so it fits page width {% endcomment %}
   <div class="page-width">
     <div class="site-footer__content">
       {% for block in section.blocks %}
-        <div
-          class="site-footer__item"
-          {% if section.blocks.size == 1 %}
-          site-footer__item--center
-          {% endif %}
-          {{ footer.item }}>
+        <div class="site-footer__item" {% if section.blocks.size == 1 %}site-footer__item--center{% endif %}{{ footer.item }}>
           <div class="site-footer__item-inner site-footer__item-inner-- {{ block.type }}">
             {% if block.settings.title %}
               <p class="h4">
@@ -90,11 +85,7 @@ different sizes so it fits page width {% endcomment %}
             {% case block.type %}
               {% when 'text' %}
               {% if block.settings.text != blank %}
-                <div
-                  class="site-footer_rte"
-                  {% if sections.blocks.size == 1 %}
-                  site-footer__single-block--centered
-                  {% endif %}>
+                <div class="site-footer_rte" {% if sections.blocks.size == 1 %}site-footer__single-block--centered{% endif %}>
 
                   {{ block.settings.text }}
                 </div>
@@ -147,7 +138,7 @@ different sizes so it fits page width {% endcomment %}
   <div class="page-width">
     <div class="grid grid--no-gutters small--text-center">
       <div class="small-hide">
-        <small class="site--footer__copyright-content">
+        <small class="site-footer__copyright-content">
           &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}, {{ "Author: Diogo Aires" }}
         </small>
       </div>
