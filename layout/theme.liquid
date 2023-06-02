@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ponto Set</title>
     <link rel="stylesheet" href=" {{ 'style.scss.css' | asset_url }}">
-    {{ content_for_header }}
+    
   </head>
 
   <body>
     {% section 'header' %}
-    {{ content_for_header }}
+      {{ content_for_header }}
 
     <main
       id="MainContent"
       class="content-for-layout focus-none"
       role="main"
       tabindex="-1">
-      {{ content_for_index }}
+      {{ content_for_layout }}
     </main>
+
 
 
     {% section 'footer' %}
