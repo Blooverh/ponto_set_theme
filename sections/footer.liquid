@@ -1,23 +1,22 @@
-
 {% comment %} Allows user to display mutiple items in footer section with
 different sizes so it fits page width {% endcomment %}
 {%- assign inline_list = false -%}
 {%- case section.blocks.size -%}
   {%- when 1 -%}
-    {%- assign footer_item = 'site-footer__item--full-width' -%}
-    {%- assign inline_list = true -%}
+  {%- assign footer_item = 'site-footer__item--full-width' -%}
+  {%- assign inline_list = true -%}
   {% when 2 %}
-    {% assign footer_item = 'site-footer__item--one-half' %}
-    {% assign inline_list = true %}
+  {% assign footer_item = 'site-footer__item--one-half' %}
+  {% assign inline_list = true %}
   {% when 3 %}
-    {% assign footer_item = 'site-footer__item--one-third' %}
-    {% assign inline_list = true %}
+  {% assign footer_item = 'site-footer__item--one-third' %}
+  {% assign inline_list = true %}
   {% when 4 %}
-    {% assign footer_item = 'site-footer__item--one-quarter' %}
-    {% assign inline_list = true %}
+  {% assign footer_item = 'site-footer__item--one-quarter' %}
+  {% assign inline_list = true %}
   {% when 5 %}
-    {% assign footer_item = 'site-footer__item--one-fifth' %}
-    {% assign inline_list = true %}
+  {% assign footer_item = 'site-footer__item--one-fifth' %}
+  {% assign inline_list = true %}
 {% endcase %}
 
 {% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
@@ -31,77 +30,94 @@ different sizes so it fits page width {% endcomment %}
   {%- assign footer_text_color_hover = footer_text_color | color_darken: 10 -%}
 {%- endif -%}
 
-{% comment %} Allows user to change colors for all html tags of the footer {% endcomment %} 
+{% comment %} Allows user to change colors for all html tags of the footer {% endcomment %}
 <style>
-  .site-footer__hr{
-    border-bottom: 1px solid {{section.settings. color_footer_bg | color_darken: 10 }};
+  .site-footer__hr {
+    border-bottom: 1px solid{{ section.settings. color_footer_bg | color_darken: 10 }};
   }
-  
+
   .site-footer p,
   .site-footer__linklist-item a,
-  .site-footer__rte a, 
+  .site-footer__rte a,
   .site-footer h4,
-  .site-footer small, 
+  .site-footer small,
   .site-footer__copyright-content a,
   .site-footer__newsletter-error {
-    color: {{ section.settings.color_footer_text }};
+    color: {{ section.settings.color_footer_text }}
+    ;
   }
 
   .site-footer {
-    color: {{ section.settings.color_footer_text }};
-    background-color: {{ section.settings.color_footer_bg }};
+    color: {{ section.settings.color_footer_text }}
+    ;
+    background-color: {{ section.settings.color_footer_bg }}
+    ;
   }
 
   .site-footer__rte a {
-    border-bottom: 1px solid {{ section.settings.color_footer_text }};
+    border-bottom: 1px solid{{ section.settings.color_footer_text }};
   }
-  .site-footer__copyright-content{color:#fff}
+  .site-footer__copyright-content {
+    color: #fff
+  }
 
   .site-footer__rte a:hover,
   .site-footer__linklist-item a:hover,
   .site-footer__copyright-content a:hover {
-    color: {{ footer_text_color_hover }};
-    border-bottom: 1px solid {{ footer_text_color_hover }};
+    color: {{ footer_text_color_hover }}
+    ;
+    border-bottom: 1px solid{{ footer_text_color_hover }};
   }
 </style>
 
 <footer class="site-footer" role="contentinfo">
   <div class="page-width">
     <div class="site-footer__content">
-      {%  for block in section.blocks %}
-        <div class="site-footer__item" 
-          {% if section.blocks.size == 1 %} site-footer__item--center {% endif %}
+      {% for block in section.blocks %}
+        <div
+          class="site-footer__item"
+          {% if section.blocks.size == 1 %}
+          site-footer__item--center
+          {% endif %}
           {{ footer.item }}>
-           <div class="site-footer__item-inner site-footer__item-inner-- {{ block.type }}">
-             {%  if block.settings.title %}
-               <p class="h4"> {{ block.settings.title | escape }} </p>
-             {% endif %}
-        
-        {% case block.type %}
-          {%  when 'text' %}
-            {% if block.settings.text != blank %}
-              <div class="site-footer_rte" 
-                {%  if sections.blocks.size == 1  %} site-footer__single-block--centered{% endif %}>
-  
-                {{ block.settings.text }}
-              </div>
-             {% endif %}
-  
-          {%  when 'link_list' %}
-              {% assign footer_linklist= block.settings.menu %}
-                <ul class="site-footer__linklist 
-                  {%  if inline_list %} list--inline {% endif %}">
-                  {%  for link in linklists[footer_linklist].links %}
-                    <li class="site-footer__linklist-item">
-                      <a href="{{ link.url }}"
-                        {% if link.current %} aria-current="page" {% endif %}>
-                        {{ link.title | escape }} </a>
-                    </li>
-                  {% endfor %}
-                </ul>
+          <div class="site-footer__item-inner site-footer__item-inner-- {{ block.type }}">
+            {% if block.settings.title %}
+              <p class="h4">
+                {{ block.settings.title | escape }}
+              </p>
+            {% endif %}
 
-             {% endcase %}
-           </div>
+            {% case block.type %}
+              {% when 'text' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="site-footer_rte"
+                  {% if sections.blocks.size == 1 %}
+                  site-footer__single-block--centered
+                  {% endif %}>
+
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+
+              {% when 'link_list' %}
+              {% assign footer_linklist = block.settings.menu %}
+              <ul
+                class="site-footer__linklist
+                {% if inline_list %}
+                  list--inline
+                {% endif %}">
+                {% for link in linklists[footer_linklist].links %}
+                  <li class="site-footer__linklist-item">
+                    <a href="{{ link.url }}"{% if link.current %}aria-current="page"{% endif %}>
+                      {{ link.title | escape }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+            {% endcase %}
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -110,11 +126,12 @@ different sizes so it fits page width {% endcomment %}
   <div class="address-panel">
     <div class="page-width">
       <ul>
-          <li class="call-col">
-          <p>Contacto: </p>
+        <li class="call-col">
+          <p>Contacto:
+          </p>
           <a href="tel:943941738">943941738</a>
         </li>
-  
+
         <li>
           <p>Email para informação:</p>
           <a href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
@@ -123,24 +140,35 @@ different sizes so it fits page width {% endcomment %}
     </div>
   </div>
 </footer>
-      
+
+{% comment %} Below Footer information such as copyright {% endcomment %}
+
+<div class="copy-right">
+  <div class="page-width">
+    <div class="grid grid--no-gutters small--text-center">
+      <div class="small-hide">
+        <small class="site--footer__copyright-content">
+          &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}, {{ "Author: Diogo Aires" }}
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% schema %}
-{
+  {
     "name": "Footer",
     "max_blocks": 4,
     "settings": [
       {
         "type": "header",
         "content": "Color"
-      },
-      {
+      }, {
         "type": "color",
         "id": "color_footer_bg",
         "label": "Background",
         "default": "#F5F5F5"
-      },
-      {
+      }, {
         "type": "color",
         "id": "color_footer_text",
         "label": "Text",
@@ -157,8 +185,7 @@ different sizes so it fits page width {% endcomment %}
             "id": "title",
             "label": "Heading",
             "default": "Quick links"
-          },
-          {
+          }, {
             "type": "link_list",
             "id": "menu",
             "label": "Menu",
@@ -167,12 +194,5 @@ different sizes so it fits page width {% endcomment %}
         ]
       }
     ]
-}
-
+  }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
