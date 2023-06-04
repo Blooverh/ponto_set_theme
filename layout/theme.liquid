@@ -13,8 +13,9 @@
     {% section 'header' %}
     {{ content_for_header }}
 
-    {%  section 'main-page' %}
-    {{ content_for_layout }}
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
 
 
