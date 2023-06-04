@@ -11,6 +11,6 @@ html {
 .banner__box {
   text-align: center;
   transform: translateY(-280px);
-    transform: translateX(-100px);
+  transform: translateX(-120px);
 }
 
