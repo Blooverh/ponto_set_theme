@@ -9,7 +9,7 @@ html {
 }
 
 .banner__box {
-  text-align: left;
+  text-align: center;
   transform: translateY(-280px);
   padding-left: 10px;
 }
