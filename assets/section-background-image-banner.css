@@ -4,6 +4,5 @@ html {
 .banner {
   width: 134%;
   margin-right: 90px;
-  display:flex;
   position: relative;
 }
