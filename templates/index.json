@@ -2,8 +2,29 @@
   "sections": {
     "background_image": {
       "type": "background_image",
+      "blocks": {
+        "06ee3572-328e-4c15-a2c6-7c6da3a6b07e": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Explora Aqui",
+            "button_link_1": "shopify:\/\/collections",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": [
+        "06ee3572-328e-4c15-a2c6-7c6da3a6b07e"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Banner.png"
+        "image": "shopify:\/\/shop_images\/Banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     }
   },
