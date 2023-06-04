@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "background_image": {
+      "type": "background_image",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "background_image"
+  ]
+}
