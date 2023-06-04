@@ -3,6 +3,7 @@
     "background_image": {
       "type": "background_image",
       "settings": {
+        "image": "shopify:\/\/shop_images\/MainPageBanner.png"
       }
     }
   },
