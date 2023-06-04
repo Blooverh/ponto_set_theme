@@ -1,6 +1,6 @@
 {{ 'section-background-image-banner.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.image_height == 'adapt' and section.settings.image != blank %}
+<!-- {% if section.settings.image_height == 'adapt' and section.settings.image != blank %}
   {%- style -%}
     @media screen and (max-width: 749px) {
       #Banner-{{ section.id }}::before,
@@ -21,7 +21,7 @@
       }
     }
   {%- endstyle -%}
-{% endif %}
+{% endif %} -->
 
 {%  style %}
   #Banner-{{ section. id}}::after {
