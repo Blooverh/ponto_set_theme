@@ -30,7 +30,7 @@
 {% endstyle %}
 
 {%- liquid
-  assign full_width = '500vw'
+  assign full_width = '100vw'
   assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
 
   if section.settings.image_behavior == 'ambient'
@@ -75,7 +75,18 @@
         "type": "image_picker",
         "id": "image",
         "label": "background_image.settings.label"
+      },
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+        "min":0,
+        "max":100,
+        "step":10,
+        "unit":"%",
+        "label":"background_image.settings.image_overlay_opacity.label",
+        "default":0
       }
+      
     ]
   }
 {% endschema %}
