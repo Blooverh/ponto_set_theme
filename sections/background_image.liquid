@@ -1,6 +1,6 @@
 {{ 'section-background-image-banner.css' | asset_url | stylesheet_tag }}
 
-<!-- {% if section.settings.image_height == 'adapt' and section.settings.image != blank %}
+{% if section.settings.image_height == 'adapt' and section.settings.image != blank %}
   {%- style -%}
     @media screen and (max-width: 749px) {
       #Banner-{{ section.id }}::before,
@@ -15,13 +15,13 @@
     @media screen and (min-width: 750px) {
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 50 }}%;
         content: '';
         display: block;
       }
     }
   {%- endstyle -%}
-{% endif %} -->
+{% endif %}
 
 {%  style %}
   #Banner-{{ section. id}}::after {
