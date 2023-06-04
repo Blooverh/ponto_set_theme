@@ -47,8 +47,21 @@
   endif
 -%}
 
+<div id="Banner-{{ section.id }}" 
+  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }}
+        banner--content-align-mobile-{{  section.settings.mobile_content_alignment }}
+        banner--{{ section.image_height }} {% if section.settings.stack_images_on_mobile and sections.settings.images != blank %} banner--stacked{% endif %}
+        {% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}
+        {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}
+        {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}
+        {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
 
-
+  {{ section.settings.image | image_url: width: 3840 | image_tag: loading: 'lazy',
+  width: section.settings.image.width,
+  height: image_height,
+  class: image_class,
+  widths:widths}}
+</div>
 {% schema %}
   {
     "name": "background_image",
