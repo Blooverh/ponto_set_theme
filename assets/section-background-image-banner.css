@@ -8,3 +8,7 @@ html {
   position: relative;
   flex-direction: columns;
 }
+
+.banner__box {
+    text-align: center;
+}
