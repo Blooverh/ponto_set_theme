@@ -29,12 +29,23 @@
   }
 {% endstyle %}
 
-{% comment %}
-  {% schema %}
-    {
-      "name": "Section name",
-      "settings": []
-    }
-  {% endschema %}
 
-{% endcomment %}
+{% schema %}
+  {
+    "name": "t:sections.background_image.name",
+    "tag": "section",
+    "class": "section",
+    "disabled_on":{
+      "groups":["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.background_image.settings.image.label"
+      }
+    ]
+  }
+{% endschema %}
+
+
