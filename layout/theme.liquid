@@ -13,7 +13,13 @@
     {% section 'header' %}
     {{ content_for_header }}
 
-    {% section 'main-page' %}
+    <main
+      class="content-for-layout focus-none"
+      id="MainContent"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
 
 
