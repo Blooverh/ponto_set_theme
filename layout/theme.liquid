@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ponto Set</title>
     <link rel="stylesheet" href=" {{ 'style.scss.css' | asset_url }}">
-    
+
   </head>
 
   <body>
     {% section 'header' %}
-      {{ content_for_header }}
+    {{ content_for_header }}
 
     <main
-      id="MainContent"
       class="content-for-layout focus-none"
+      id="MainContent"
       role="main"
       tabindex="-1">
       {{ content_for_layout }}
