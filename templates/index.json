@@ -1,7 +1,7 @@
 {
   "sections": {
-    "background_image": {
-      "type": "background_image",
+    "MainSectionHomePage": {
+      "type": "MainSectionHomePage",
       "blocks": {
         "55cd5f00-521c-42b2-a15a-dd0a7f7135ab": {
           "type": "heading",
@@ -48,6 +48,6 @@
     }
   },
   "order": [
-    "background_image"
+    "MainSectionHomePage"
   ]
 }
