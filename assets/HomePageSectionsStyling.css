@@ -26,3 +26,8 @@
   position: absolute;
   top: 0;
 }
+
+.custom__item-inner--image {
+  position: relative;
+  margin: 0 auto;
+}
