@@ -5,7 +5,6 @@
       "blocks": {
         "55cd5f00-521c-42b2-a15a-dd0a7f7135ab": {
           "type": "heading",
-          "disabled": true,
           "settings": {
             "heading": "Ponto Set Descobre Padel e Tenis",
             "heading_size": "h1"
@@ -32,53 +31,19 @@
         "06ee3572-328e-4c15-a2c6-7c6da3a6b07e",
         "1329d0c4-7d65-48ee-b097-23d067b19f34"
       ],
-      "custom_css": [
-        ".banner {width: 250px;}"
-      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-11_171454.png",
         "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "top-right",
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
-    },
-    "538c2140-6102-4ede-b7b6-57210ea7cf3d": {
-      "type": "CustomContentSection",
-      "blocks": {
-        "template--19293825040703__538c2140-6102-4ede-b7b6-57210ea7cf3d-1686521897263dfa47-0": {
-          "type": "text",
-          "settings": {
-            "title": "Talk about your brand",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
-            "width": "50%",
-            "alignment": "center",
-            "align_text": "left"
-          }
-        },
-        "template--19293825040703__538c2140-6102-4ede-b7b6-57210ea7cf3d-1686521897263dfa47-1": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--19293825040703__538c2140-6102-4ede-b7b6-57210ea7cf3d-1686521897263dfa47-0",
-        "template--19293825040703__538c2140-6102-4ede-b7b6-57210ea7cf3d-1686521897263dfa47-1"
-      ],
-      "settings": {
-        "title": "Custom content"
-      }
     }
   },
   "order": [
-    "MainSectionHomePage",
-    "538c2140-6102-4ede-b7b6-57210ea7cf3d"
+    "MainSectionHomePage"
   ]
 }
