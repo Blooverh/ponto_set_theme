@@ -2,6 +2,7 @@
   "sections": {
     "MainSectionHomePage": {
       "type": "MainSectionHomePage",
+      "disabled": true,
       "blocks": {
         "55cd5f00-521c-42b2-a15a-dd0a7f7135ab": {
           "type": "heading",
@@ -48,9 +49,40 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "2a7c7e42-9702-4d6d-88a5-5674b911b244": {
+      "type": "CustomContentSection",
+      "blocks": {
+        "template--19293825040703__2a7c7e42-9702-4d6d-88a5-5674b911b244-1686518955dd8ee0b2-0": {
+          "type": "text",
+          "settings": {
+            "title": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left"
+          }
+        },
+        "template--19293825040703__2a7c7e42-9702-4d6d-88a5-5674b911b244-1686518955dd8ee0b2-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Banner.png",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--19293825040703__2a7c7e42-9702-4d6d-88a5-5674b911b244-1686518955dd8ee0b2-0",
+        "template--19293825040703__2a7c7e42-9702-4d6d-88a5-5674b911b244-1686518955dd8ee0b2-1"
+      ],
+      "settings": {
+        "title": "Custom content"
+      }
     }
   },
   "order": [
-    "MainSectionHomePage"
+    "MainSectionHomePage",
+    "2a7c7e42-9702-4d6d-88a5-5674b911b244"
   ]
 }
