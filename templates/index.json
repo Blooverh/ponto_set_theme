@@ -32,12 +32,14 @@
         "1329d0c4-7d65-48ee-b097-23d067b19f34"
       ],
       "custom_css": [
-
+        ".banner__box {width: 500px;}",
+        ".banner {width: 250px;}"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-11_171454.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "top-right",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
