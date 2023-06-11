@@ -35,7 +35,7 @@
                       {% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}
                       {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}
                       {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}
-                      {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">{{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy' 
+                      {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">{{ section.settings.image | image_url: width: 3840 | image_tag: loading: 'lazy' 
  , width: section.settings.image.width,
  height: image_height,
  class: image_class,
