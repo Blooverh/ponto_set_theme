@@ -2,7 +2,6 @@
   "sections": {
     "MainSectionHomePage": {
       "type": "MainSectionHomePage",
-      "disabled": true,
       "blocks": {
         "55cd5f00-521c-42b2-a15a-dd0a7f7135ab": {
           "type": "heading",
