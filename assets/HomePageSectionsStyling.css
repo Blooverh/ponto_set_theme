@@ -6,7 +6,7 @@
 }
 
 .banner__box {
-    text-align: center;
+    text-align: top-center;
     padding: 15rem 10rem;
     position: relative;
     height: fit-content;
