@@ -14,7 +14,7 @@
     width: 100%;
     word-wrap: break-word;
     z-index: 1;
-    transform: translateY(-80px);
+/*     transform: translateY(-80px); */
   }
 
   @media (max-width: 968px){
@@ -45,7 +45,7 @@
   gap: 1rem;
   max-width: 45rem;
   word-break: break-word;
-
+  
   @media (max-width: 968px){
       transform:translateY(50px);
     }
