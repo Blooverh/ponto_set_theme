@@ -24,11 +24,6 @@
   }
 }
 
-.banner__button {
-    @media (max-width: 968px){
-      transform:translateY(50px);
-    }
-}
 
 /* @media screen and (min-width: 750px) {
   .banner__box {
@@ -50,6 +45,10 @@
   gap: 1rem;
   max-width: 45rem;
   word-break: break-word;
+
+  @media (max-width: 968px){
+      transform:translateY(50px);
+    }
 }
 
 
