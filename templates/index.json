@@ -32,7 +32,7 @@
         "1329d0c4-7d65-48ee-b097-23d067b19f34"
       ],
       "custom_css": [
-        ".banner {height: 700px;}",
+        ".banner {height: 700px; width: 2000px;}",
         ".button--primary {margin-left: 20px;}",
         ".banner__heading {width: 500px;}",
         ".banner__text {width: 500px;}"
