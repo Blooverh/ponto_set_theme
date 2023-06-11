@@ -4,7 +4,7 @@
     background-size: cover;
 }
 
-/* .banner__box {
+.banner__box {
     text-align: center;
     padding: 15rem 10rem;
     position: relative;
@@ -14,7 +14,7 @@
     word-wrap: break-word;
     z-index: 1;
     transform: translateY(-80px);
-} */
+}
 
 /* @media screen and (min-width: 750px) {
   .banner__box {
