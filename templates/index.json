@@ -2,35 +2,6 @@
   "sections": {
     "MainSectionHomePage": {
       "type": "MainSectionHomePage",
-      "blocks": {
-        "55cd5f00-521c-42b2-a15a-dd0a7f7135ab": {
-          "type": "heading",
-          "settings": {
-            "heading": "Ponto Set Descobre Padel e Tenis",
-            "heading_size": "h1"
-          }
-        },
-        "06ee3572-328e-4c15-a2c6-7c6da3a6b07e": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Explora Aqui",
-            "button_link_1": "shopify:\/\/collections",
-            "button_style_secondary_1": false
-          }
-        },
-        "1329d0c4-7d65-48ee-b097-23d067b19f34": {
-          "type": "text",
-          "settings": {
-            "text": "Ponto Set e a tua loja de desporto especifica para os desportos de Tennis e Padel. Aqui na loja encontras todos os productos especializados para ajudar a tua performance no Padel ou no Tennis",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "55cd5f00-521c-42b2-a15a-dd0a7f7135ab",
-        "06ee3572-328e-4c15-a2c6-7c6da3a6b07e",
-        "1329d0c4-7d65-48ee-b097-23d067b19f34"
-      ],
       "custom_css": [
 
       ],
