@@ -5,6 +5,10 @@
     display: block;
 }
 
+.banner__box {
+    text-align: center;
+}
+
 /* Custom content Section Styling */
 .custom-content {
     display: flexbox;
