@@ -1,0 +1,18 @@
+#shopify-section-19293825040703 {
+    background: url(../assets/Banner.png) no-repeat;
+    background-size: cover;
+}
+
+.custom-content {
+    display: flexbox;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: auto;
+    margin-bottom: 30px ;
+    margin-left: 30px;
+
+    @media (max-width: 767px) {
+        margin-bottom: 22px;
+        margin-left: 22px;
+    }
+}
