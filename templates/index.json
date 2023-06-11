@@ -31,8 +31,10 @@
         "06ee3572-328e-4c15-a2c6-7c6da3a6b07e",
         "1329d0c4-7d65-48ee-b097-23d067b19f34"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/tennis-ball.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
