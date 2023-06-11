@@ -6,11 +6,11 @@
 }
 
 .banner__box {
-    text-align: top-center;
+    text-align: center;
     padding: 15rem 10rem;
     position: relative;
     height: fit-content;
-    align-items: center;
+    align-items: text-top;
     width: 100%;
     word-wrap: break-word;
     z-index: 1;
