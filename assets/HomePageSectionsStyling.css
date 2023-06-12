@@ -90,3 +90,9 @@
     @include flex-direction(column);
   }
 }
+
+
+.feature-row__image {
+  display: block;
+  margin: 0 auto;
+}
