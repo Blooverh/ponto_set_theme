@@ -80,6 +80,28 @@
     "collapsible_content_title": "Collapsible content",
     "complementary_products": "Complementary products"
   },
+  "collections": {
+    "general": {
+      "view_all": "View all",
+      "view_all_label": "View all products in the {{ collection_name }} collection",
+      "no_matches": "Sorry, there are no products in this collection",
+      "items_with_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "collection_label": "Collection"
+    },
+    "catalog": {
+      "title": "Catalog"
+    },
+    "sorting": {
+      "title": "Sort by"
+    },
+    "filters": {
+      "title_tags": "Filter by",
+      "all_tags": "All products"
+    }
+  },
   "homepage": {
     "general": {
       "title": "Homepage"
