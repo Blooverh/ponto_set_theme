@@ -43,7 +43,11 @@
       {% if section.settings.button_label != blank and section.settings.button_link != blank %}
         {%- capture ariaLabel -%}
           {{- section.settings.button_label -}}
-          {%- if section.settings.button_link.object.title -%}
+          {%- if section.settings.button_link.type == 'frontpage_link' -%}
+            : {{ 'homepage.general.title' | t -}}
+          {%- elsif section.settings.button_link.type == 'catalog_link' -%}
+            : {{ 'collections.catalog.title' | t -}}
+          {%- elsif section.settings.button_link.object.title -%}
             : {{ section.settings.button_link.object.title -}}
           {%- endif -%}
         {%- endcapture -%}
