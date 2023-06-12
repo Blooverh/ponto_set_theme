@@ -17,6 +17,10 @@
     transform: translateY(150px); 
   }
 
+  @media (min-width: 686px) and (max-width: 1130px){
+    padding: 8rem 4rem;
+  }
+
   @media (max-width: 685px){
      padding: 6.5rem 4rem;
     text-align: center;
