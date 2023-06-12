@@ -78,3 +78,15 @@
   position: relative;
   margin: 0 auto;
 } */
+
+/* Featured Row section of home page  */
+
+.feature-row {
+  @include display-flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  @include media-query(767px) {
+    @include flex-direction(column);
+  }
+}
