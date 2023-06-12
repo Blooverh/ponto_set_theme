@@ -81,34 +81,4 @@
 
 /* Featured Row section of home page  */
 
-.feature-row {
-  @include display-flexbox();
-  @include justify-content(space-between);
-  @include align-items(center);
 
-  @include media-query(767px) {
-    @include flex-direction(column);
-  }
-}
-
-
-.feature-row__image {
-  display: block;
-  margin: 0 auto;
-}
-
-.feature-row-item {
-  @include flex(0 1 50%);
-
-  @include media-query(768px) {
-    @include flex(1 1 auto);
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-.feature-row__image-wrapper {
-  margin: 0 auto 10 / 1.8;
-  position: relative;
-  width: 100%;
-}
