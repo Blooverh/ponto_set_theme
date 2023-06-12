@@ -17,7 +17,7 @@
     transform: translateY(150px); 
   }
 
-  @media (max-width: 1130px){
+  @media (max-width: 685px){
      padding: 6.5rem 4rem;
     text-align: center;
   }
