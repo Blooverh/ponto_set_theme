@@ -29,9 +29,21 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "123087c1-f7f1-4807-8626-0cfd48dd9427": {
+      "type": "featured-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-11_171454.png",
+        "layout": "left",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+        "button_label": "",
+        "button_link": ""
+      }
     }
   },
   "order": [
-    "MainSectionHomePage"
+    "MainSectionHomePage",
+    "123087c1-f7f1-4807-8626-0cfd48dd9427"
   ]
 }

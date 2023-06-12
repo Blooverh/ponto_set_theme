@@ -96,3 +96,13 @@
   display: block;
   margin: 0 auto;
 }
+
+.feature-row__item {
+  @include flex(0 1 50%);
+
+  @include media-query(768px) {
+    @include flex(1 1 auto);
+    width: 100%;
+    max-width: 100%;
+  }
+}
