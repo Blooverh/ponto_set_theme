@@ -97,7 +97,7 @@
   margin: 0 auto;
 }
 
-.feature-row__item {
+.feature-row-item {
   @include flex(0 1 50%);
 
   @include media-query(768px) {
