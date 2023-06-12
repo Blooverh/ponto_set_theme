@@ -5,7 +5,7 @@
 }
 
 .banner__box {
-  @media (min-width: 968px) {
+  @media (min-width: 686px) {
     text-align: center;
     padding: 20rem 10rem;
     position: relative;
