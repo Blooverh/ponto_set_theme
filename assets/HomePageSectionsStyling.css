@@ -36,10 +36,11 @@
   border: none;
   cursor: pointer;
   display: inline;
+  text-transform: capitalize;
 }
 
 /* ripple effect on button*/
-banner_buttons::after{
+.banner_buttons::after{
   content: "";
   position: absolute;
   top: 50%;
