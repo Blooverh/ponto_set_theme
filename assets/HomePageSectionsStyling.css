@@ -29,7 +29,7 @@
   
 } */
 
-.banner__buttons .ripple {
+.banner__buttons{
   position: relative;
   overflow: hidden;
   background-color: #FAA902;
