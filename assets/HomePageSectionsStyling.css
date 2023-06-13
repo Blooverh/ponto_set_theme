@@ -67,7 +67,7 @@ div#shopify-section-template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856
     width: 59%;
 } */
 
-custom-content-h4 {
+h4.custom-content-h4 {
       margin: 0;
       font-weight: 600;
       padding: 10px 20px;
