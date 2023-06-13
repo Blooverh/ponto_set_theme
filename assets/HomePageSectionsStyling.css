@@ -27,10 +27,47 @@
   }
 }
 
+.banner__buttons {
+  position: relative;
+  overflow: hidden;
+  background-color: #FAA902;
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ripple effect on button*/
+banner_buttons::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* Add animation to the ripple effect */
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
 
 
 
-/* Custom content Section Styling */
+/******** Custom content Section Styling ******************/
 .custom-content {
     display: flexbox;
     align-items: stretch;
