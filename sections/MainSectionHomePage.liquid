@@ -64,25 +64,25 @@
               <script>
               document.getElementById("banner__buttons").addEventListener("click", function(event){
                 // Create a span element to represent the ripple effect
-                        var span = document.createElement("span");
-                        span.classList.add("ripple");
-                        this.appendChild(span);
-                      
-                        // Calculate the position of the click relative to the button
-                        var x = event.pageX - this.offsetLeft;
-                        var y = event.pageY - this.offsetTop;
-                      
-                        // Set the position of the ripple effect
-                        span.style.left = x + "px";
-                        span.style.top = y + "px";
-                      
-                        // Start the animation
-                        span.classList.add("animate");
-                      
-                        // Remove the ripple element after the animation completes
-                        setTimeout(function() {
-                          span.parentNode.removeChild(span);
-                        }, 800);
+                      var span = document.createElement("span");
+                      span.classList.add("ripple");
+                      this.appendChild(span);
+                    
+                      // Calculate the position of the click relative to the button
+                      var x = event.pageX - this.offsetLeft;
+                      var y = event.pageY - this.offsetTop;
+                    
+                      // Set the position of the ripple effect
+                      span.style.left = x + "px";
+                      span.style.top = y + "px";
+                    
+                      // Start the animation
+                      span.classList.add("animate");
+                    
+                      // Remove the ripple element after the animation completes
+                      setTimeout(function() {
+                        span.parentNode.removeChild(span);
+                      }, 800);
               });
               </script>
               {%- endif -%}
