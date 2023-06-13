@@ -36,19 +36,11 @@
         "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0": {
           "type": "text",
           "settings": {
-            "title": "Talk about your brand",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
-            "width": "50%",
-            "alignment": "center",
-            "align_text": "left"
-          }
-        },
-        "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screenshot_2023-06-11_171454.png",
+            "title": "Ponto Set A Sua Loja de Padel e Tenis",
+            "text": "<p>Na Ponto Set podes encontrar todos os accessorios e roupa para melhorar a tua performance nos desportos do Padel e do Tennis.<\/p>",
             "width": "33%",
-            "alignment": "center"
+            "alignment": "center",
+            "align_text": "center"
           }
         },
         "be3755e6-08ef-4587-90d5-79535fb298be": {
@@ -61,7 +53,6 @@
       },
       "block_order": [
         "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0",
-        "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-1",
         "be3755e6-08ef-4587-90d5-79535fb298be"
       ],
       "settings": {
