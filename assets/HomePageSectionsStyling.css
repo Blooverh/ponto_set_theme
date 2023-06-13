@@ -35,7 +35,7 @@
   padding: 8px 4px;
   border: none;
   cursor: pointer;
-  width: 110px;
+  display: inline;
 }
 
 /* ripple effect on button*/
