@@ -32,10 +32,10 @@
   overflow: hidden;
   background-color: #FAA902;
   color: black;
-  padding: 12px 24px;
+  padding: 8px 4px;
   border: none;
   cursor: pointer;
-  width: 100px;
+  width: 110px;
 }
 
 /* ripple effect on button*/
