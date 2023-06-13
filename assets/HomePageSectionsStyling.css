@@ -67,6 +67,13 @@ div#shopify-section-template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856
     width: 59%;
 }
 
+.custom__image {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
 /* Section header styling */
 .section-header {
   margin-bottom: 30px;
