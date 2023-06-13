@@ -12,9 +12,7 @@
     height: fit-content;
     align-items: center;
     width: 100%;
-    word-wrap: break-word;
     z-index: 1;
-    transform: translateY(150px); 
   }
 
   @media (min-width: 686px) and (max-width: 1130px){
@@ -26,6 +24,10 @@
     text-align: center;
   }
 }
+
+/* .banner__box .content-container .content-container--full-width-mobile .color- .gradient{
+  
+} */
 
 .banner__buttons {
   position: relative;
