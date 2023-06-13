@@ -6,7 +6,7 @@
         "8a512384-d1f5-43b4-93e1-0bde88baab8e": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
+            "button_label_1": "Explora Aqui",
             "button_link_1": "shopify:\/\/collections",
             "button_style_secondary_1": false
           }
