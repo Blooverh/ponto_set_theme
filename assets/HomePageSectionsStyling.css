@@ -66,6 +66,10 @@ banner_buttons::after{
   }
 }
 
+a.button.button--primary {
+    color: black;
+}
+
 
 
 /******** Custom content Section Styling ******************/
