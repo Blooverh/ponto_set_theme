@@ -147,7 +147,7 @@ h4.custom-content-h4 {
 
 /* Explore Button Styling */
 .section-button {
-  align-content: center;
+  align-items: center;
 }
 .button {
   display: inline-block;
