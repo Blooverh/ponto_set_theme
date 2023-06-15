@@ -16,49 +16,12 @@
         "show_text_below": true
       }
     },
-    "35777694-5d76-486b-8f42-94b34f5c0064": {
-      "type": "MainSectionHomePage",
-      "disabled": true,
-      "blocks": {
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-0": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h1"
-          }
-        },
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-1": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false
-          }
-        }
-      },
-      "block_order": [
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-0",
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-1",
-        "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-2"
-      ],
+    "ExploreButton": {
+      "type": "ExploreButton",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "text-box": "",
+        "link": "",
+        "linktext": "Explora Aqui"
       }
     },
     "1eca8bb0-9de1-458e-b883-e367667856be": {
@@ -90,20 +53,11 @@
       "settings": {
         "title": "collection-showing"
       }
-    },
-    "ExploreButton": {
-      "type": "ExploreButton",
-      "settings": {
-        "text-box": "",
-        "link": "",
-        "linktext": "Explora Aqui"
-      }
     }
   },
   "order": [
     "MainSectionHomePage",
-    "35777694-5d76-486b-8f42-94b34f5c0064",
-    "1eca8bb0-9de1-458e-b883-e367667856be",
-    "ExploreButton"
+    "ExploreButton",
+    "1eca8bb0-9de1-458e-b883-e367667856be"
   ]
 }
