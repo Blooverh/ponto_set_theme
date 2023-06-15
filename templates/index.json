@@ -1,5 +1,10 @@
 {
   "sections": {
+    "ExploreButton": {
+      "type": "ExploreButton",
+      "settings": {
+      }
+    },
     "MainSectionHomePage": {
       "type": "MainSectionHomePage",
       "custom_css": [
@@ -61,13 +66,6 @@
         "show_text_below": true
       }
     },
-
-    "ExploreButton":{
-      "type":"ExploreButton",
-      "settings": {
-        
-      }
-    },
     "1eca8bb0-9de1-458e-b883-e367667856be": {
       "type": "CustomContentSection",
       "blocks": {
@@ -100,6 +98,7 @@
   },
   "order": [
     "MainSectionHomePage",
+    "ExploreButton",
     "35777694-5d76-486b-8f42-94b34f5c0064",
     "1eca8bb0-9de1-458e-b883-e367667856be"
   ]
