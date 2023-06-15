@@ -127,6 +127,8 @@ h4.custom-content-h4 {
 .rte-setting.rte{
   padding-top: 20px;
   text-align: center;
+  font-size: 24px;
+  color: black;
 }
 
 .custom__image {
