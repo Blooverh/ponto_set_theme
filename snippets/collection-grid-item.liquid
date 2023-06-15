@@ -35,7 +35,7 @@ To do: style div  classes, see what bgset is , check what placeholder_svg is
     {% else %}
       {% if collection == empty %}
         <div class="collection-grid-item_overlay">
-          {% capture %}
+          {% capture current %}
             {% cycle 1, 2, 3 %}
           {% endcapture %}
           {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder_svg' }}
