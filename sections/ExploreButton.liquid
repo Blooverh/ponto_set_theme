@@ -1,3 +1,5 @@
+{{ 'HomePageSectionsStyling.css' | asset_url | stylesheet_tag }}
+
 <div id="section-button">
   <h3>Queres os Melhores Productos?</h3>
   <a href="{{ section.settings.link }}" class="button">
@@ -8,6 +10,7 @@
 {% schema %}
   {
     "name": "Call to action",
+    "class": "index-section",
     "settings": [
       {
         "id": "text-box",
