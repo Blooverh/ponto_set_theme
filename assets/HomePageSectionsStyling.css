@@ -147,11 +147,11 @@ h4.custom-content-h4 {
 
 /* Explore Button Styling */
 .section-button {
-  display: center;
+  
 }
 .button {
   display: inline-block;
-  padding: 0.85em 1.5em;
+  padding: 10em 10em;
   font-size: 1.5em;
   cursor: pointer;
   text-decoration: none;
