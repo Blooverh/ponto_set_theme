@@ -76,6 +76,7 @@
         },
         "be3755e6-08ef-4587-90d5-79535fb298be": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "raquetes-de-padel",
             "width": "50%"
