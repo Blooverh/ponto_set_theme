@@ -147,9 +147,7 @@ h4.custom-content-h4 {
 
 /* Explore Button Styling */
 .button-section {
-  margin-left:500px;
-  margin-right:500px;
-}
+  text-align: center;
 .button {
   display: inline-block;
   padding: 0.85em 1.5em;
