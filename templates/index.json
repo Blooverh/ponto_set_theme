@@ -1,10 +1,5 @@
 {
   "sections": {
-    "ExploreButton": {
-      "type": "ExploreButton",
-      "settings": {
-      }
-    },
     "MainSectionHomePage": {
       "type": "MainSectionHomePage",
       "custom_css": [
@@ -19,6 +14,14 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
+      }
+    },
+    "ExploreButton": {
+      "type": "ExploreButton",
+      "settings": {
+        "text-box": "",
+        "link": "",
+        "linktext": "Explora Aqui"
       }
     },
     "35777694-5d76-486b-8f42-94b34f5c0064": {
