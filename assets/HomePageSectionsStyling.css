@@ -122,6 +122,9 @@ h4.custom-content-h4 {
     border: 1px solid #FAA902;
     border-bottom: unset;
     text-align: center;
+  @media (max-width: 767px){
+    font-size: 20px;
+  }
 }
 
 .rte-setting.rte{
