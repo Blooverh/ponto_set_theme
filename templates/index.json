@@ -18,6 +18,7 @@
     },
     "35777694-5d76-486b-8f42-94b34f5c0064": {
       "type": "MainSectionHomePage",
+      "disabled": true,
       "blocks": {
         "template--19293825040703__35777694-5d76-486b-8f42-94b34f5c0064-168661901008ef8192-0": {
           "type": "heading",
@@ -93,7 +94,7 @@
         "be3755e6-08ef-4587-90d5-79535fb298be"
       ],
       "settings": {
-        "title": "collection showing"
+        "title": "collection-showing"
       }
     }
   },
