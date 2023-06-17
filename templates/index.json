@@ -51,26 +51,12 @@
         "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
-          }
-        },
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
+            "collection": "raquetes-de-padel"
           }
         }
       },
       "block_order": [
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0",
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-1",
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-2"
+        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0"
       ],
       "settings": {
         "title": "",
