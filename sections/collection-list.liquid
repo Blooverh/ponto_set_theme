@@ -1,5 +1,5 @@
 <div class="width">
-{% comment %} need to add styling for section-header text-center if needed {% endcomment %}
+  {% comment %} need to add styling for section-header text-center if needed {% endcomment %}
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
       <h2>{{ section.settings.title | escape }}</h2>
@@ -33,78 +33,54 @@
   {% endif %}
 </div>
 
-{%  stylesheet  %}
-    li.grid-item {
-        border: 1px solid black;
-        margin: 0 19px 16px;
-        width: 23.2%;
-        font-size: 13px;
-        text-align: center;
-    }
-
-    .collection-grid-item {
-        position: relative;
-        width: 100%;
-        padding-bottom: 100%;
-        
-        @media (min-width: 767px) {
-            margin-bottom: 30px;
-        }
-    }
-
-{% endstylesheet %}
-
-{%  schema  %}
-{
+{% schema %}
+  {
     "name": "collection list",
-    "class":"index-section",
-    "max_blocks":12,
-    "settings" : [
-        {
-            "type":"text",
-            "id":"title",
-            "label": "Heading",
-            "default": "Collection list"
-        },
-        {
-            "type": "range",
-      "id": "grid",
-      "label": "Collections per row",
-      "min": 2,
-      "max": 5,
-      "step": 1,
-      "default": 3
-        }
+    "class": "index-section",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collection list"
+      }, {
+        "type": "range",
+        "id": "grid",
+        "label": "Collections per row",
+        "min": 2,
+        "max": 5,
+        "step": 1,
+        "default": 3
+      }
     ],
     "blocks": [
-        {
-            "type": "featured_collection",
-            "name": "Collection",
-            "settings": [
-                {
-                    "label":"Collection",
-                    "id": "collection",
-                    "type":"collection"
-                }
-            ]
-        }
+      {
+        "type": "featured_collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
     ],
-    "presets":[
-        {
-            "name": "Collection list",
-            "category":"Collection",
-            "blocks": [
-                {
-                    "type":"featured_collection"
-                },
-                {
-                    "type":"featured_collection"
-                },
-                {
-                    "type":"featured_collection"
-                }
-            ]
-        }
+    "presets": [
+      {
+        "name": "Collection list",
+        "category": "Collection",
+        "blocks": [
+          {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }, {
+            "type": "featured_collection"
+          }
+        ]
+      }
     ]
-}
-{% endschema %} 
+  }
+{% endschema %}
