@@ -36,22 +36,13 @@
             "alignment": "center",
             "align_text": "center"
           }
-        },
-        "be3755e6-08ef-4587-90d5-79535fb298be": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "raquetes-de-padel",
-            "width": "50%"
-          }
         }
       },
       "block_order": [
-        "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0",
-        "be3755e6-08ef-4587-90d5-79535fb298be"
+        "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0"
       ],
       "settings": {
-        "title": "collection-showing"
+        "title": ""
       }
     },
     "54dfb849-5cec-4059-8803-20f4404b8e24": {
