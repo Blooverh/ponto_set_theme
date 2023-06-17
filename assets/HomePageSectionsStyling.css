@@ -246,3 +246,11 @@ li.grid-item {
   background-color: #f7f7f7;
   background-size: contain;
 }
+
+a.\'collection-grid-item__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
