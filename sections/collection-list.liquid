@@ -34,7 +34,23 @@
 </div>
 
 {%  stylesheet  %}
+    li.grid-item {
+        border: 1px solid black;
+        margin: 0 19px 16px;
+        width: 23.2%;
+        font-size: 13px;
+        text-align: center;
+    }
 
+    .collection-grid-item {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        
+        @media (min-width: 767px) {
+            margin-bottom: 30px;
+        }
+    }
 
 {% endstylesheet %}
 
