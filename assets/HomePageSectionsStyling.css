@@ -219,7 +219,7 @@ li.grid-item {
   }
 }
 
-/* collection-grid-item snippet */ 
+/************ collection-grid-item snippet *************/ 
 .collection-grid_item_overlay {
   position: relative;
   display: block;
