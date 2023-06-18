@@ -266,7 +266,7 @@ a.\'collection-grid-item__link {
 
    &:hover,
   &:focus {
-    .collection-grid-item_title-wrapper::before {
+    .collection-grid-item_title_wrapper::before {
       opacity: 0.2;
     }
   }
