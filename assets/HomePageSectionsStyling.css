@@ -201,7 +201,7 @@ h4.custom-content-h4 {
 
 /* Collection list section styling */
 li.grid-item {
-  border: 1px solid black;
+  border: 1px white;
   margin: 0 19px 16px;
   width: 23.2%;
   font-size: 13px;
