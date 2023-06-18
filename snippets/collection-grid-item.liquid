@@ -17,15 +17,12 @@ To do: style div  classes, see what bgset is , check what placeholder_svg is
 <div class="collection-grid-item">
   <a
     href="
-    {% if collection.products == empty %}#
-    {% else %}
-      {{ collection.url }}{% endif %}"
-    class="'collection-grid-item__link">
+    {% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" class="'collection-grid-item__link">
     {% unless collection_image == blank %}
       <div
         class="collection-grid_item_overlay box-ratio-container"
         data-bgset="{% render 'bgset', image: collection_image %}"
-        data-sizes="100px"
+        data-sizes="auto"
         data-parent-fit="cover"
         style="background-image: url(' {{collection_image | img_url: '300x300'}}')"></div>
 
