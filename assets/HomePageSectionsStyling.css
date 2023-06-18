@@ -237,7 +237,7 @@ li.grid-item {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: white;
   opacity: 0;
 }
           /*lazy loading */
