@@ -241,6 +241,11 @@ li.grid-item {
   background-color: white;
   opacity: 0;
 }
+
+.collection-grid-item_title.h3 {
+    font-size: large;
+    color: #c39714;
+}
           /*lazy loading */
 .box {
   background: no-repeat;
