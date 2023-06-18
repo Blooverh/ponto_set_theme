@@ -244,6 +244,8 @@ li.grid-item {
 }
 
 
+
+
 .collection-grid-item_title.h3 {
     font-size: large;
     color: #c39714;
@@ -261,4 +263,15 @@ a.\'collection-grid-item__link {
   bottom: 0;
   left: 0;
   right: 0;
+
+   &:hover,
+  &:focus {
+    .collection-grid-item_title-wrapper::before {
+      opacity: 0.2;
+    }
+  }
+
+  &:focus {
+    opacity: 1;
+  }
 }
