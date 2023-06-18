@@ -207,6 +207,14 @@ li.grid-item {
   font-size: 13px;
   text-align: center;
 }
+li.grid-item:hover {
+  border: 1px white;
+  margin: 0 19px 16px;
+  width: 23.2%;
+  font-size: 13px;
+  text-align: center;
+  color: yellow;
+}
 
 .collection-grid-item {
   position: relative;
@@ -241,6 +249,7 @@ li.grid-item {
   background-color: white;
   opacity: 0;
 }
+
 
 .collection-grid-item_title.h3 {
     font-size: large;
