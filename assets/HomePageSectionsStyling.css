@@ -211,6 +211,10 @@ li.grid-item {
 
 .collection-grid {
   height: 400px;
+  
+  @media (max-width: 767px){
+    display: inline;
+  }
 }
 
 
