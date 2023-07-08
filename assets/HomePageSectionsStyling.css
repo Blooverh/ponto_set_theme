@@ -206,7 +206,11 @@ li.grid-item {
   width: 23.2%;
   font-size: 13px;
   text-align: center;
-  height: 120px;
+  height: 130px;
+}
+
+.collection-grid {
+  height: 400px;
 }
 
 
