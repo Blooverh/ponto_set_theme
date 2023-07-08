@@ -59,11 +59,32 @@
           "settings": {
             "collection": "raquetes-de-tenis"
           }
+        },
+        "150fef06-2e85-478a-9abd-c5647e21d6ab": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "roupa-de-mulher"
+          }
+        },
+        "80aa7999-93ba-4f5e-82e3-4f5f4f7233bc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "roupa-de-homem"
+          }
+        },
+        "c52f8420-72e5-4cb3-a12b-9c9cba00337f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "acessorios"
+          }
         }
       },
       "block_order": [
         "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0",
-        "1bb24026-774f-4e55-9880-8a105f3afb46"
+        "1bb24026-774f-4e55-9880-8a105f3afb46",
+        "150fef06-2e85-478a-9abd-c5647e21d6ab",
+        "80aa7999-93ba-4f5e-82e3-4f5f4f7233bc",
+        "c52f8420-72e5-4cb3-a12b-9c9cba00337f"
       ],
       "settings": {
         "title": "",
