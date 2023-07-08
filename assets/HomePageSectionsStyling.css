@@ -209,6 +209,17 @@ li.grid-item {
   height: 130px;
 }
 
+@media (max-width:767px){
+  li.grid-item.small--one-half.medium-up--one-fifth {
+  margin: 0 100px 100px;
+  width: 25%;
+  font-size: 10px;
+  text-align: center;
+  height: 150px;
+  }
+
+}
+
 .collection-grid {
   height: 400px;
   
