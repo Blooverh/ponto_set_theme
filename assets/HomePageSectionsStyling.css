@@ -218,14 +218,18 @@ li.grid-item {
   height: 150px;
   }
 
+  .collection-grid {
+    display: inline;
+  }
+
+  .collection-grid-item {
+    margin-bottom: 30px;
+  }
+
 }
 
 .collection-grid {
   height: 400px;
-  
-  @media (max-width: 767px){
-    display: inline;
-  }
 }
 
 
@@ -233,10 +237,7 @@ li.grid-item {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
-  
-  @media (min-width: 767px) {
-      margin-bottom: 30px;
-  }
+
 }
 
 ul.grid-uniform {
