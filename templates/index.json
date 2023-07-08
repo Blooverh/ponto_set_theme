@@ -53,10 +53,17 @@
           "settings": {
             "collection": "raquetes-de-padel"
           }
+        },
+        "1bb24026-774f-4e55-9880-8a105f3afb46": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "raquetes-de-tenis"
+          }
         }
       },
       "block_order": [
-        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0"
+        "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0",
+        "1bb24026-774f-4e55-9880-8a105f3afb46"
       ],
       "settings": {
         "title": "",
