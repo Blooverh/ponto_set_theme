@@ -1,0 +1,31 @@
+.grid__item {
+    float: left;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.contact_pg {
+    display: block;
+    width: 100%;
+}
+
+.contact_pg .left_side {
+    width: 70%;
+    float: left;
+    padding: 0 15px;
+}
+
+.grid-half {
+    margin-left: -15px ;
+}
+
+.grid-half > .grid__item {
+    padding-left: 15px;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 19.44444px;
+}
+
