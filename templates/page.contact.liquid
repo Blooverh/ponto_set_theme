@@ -32,7 +32,7 @@ It will also contain content from the contact page it self for extra information
                 <div
                   class="grid__item name">
                   <label
-                    for=" {{ formId }}-name">{{ 'contact.form.name' | t }}</label>
+                    for=" {{ formId }}-name">Nome:</label>
                   <input
                     type="text"
                     id="{{ formId }}-name"
@@ -46,7 +46,7 @@ It will also contain content from the contact page it self for extra information
                 <div
                   class="grid__item email">
                   <label
-                    for="{{ formId }}-email">{{ 'contact.form.email' | t }}
+                    for="{{ formId }}-email">Email:
                     <span
                       aria-hidden="true">*</span>
                   </label>
@@ -76,7 +76,7 @@ It will also contain content from the contact page it self for extra information
 
               {% comment %} contact phone part of the form {% endcomment %}
               <label
-                for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+                for="{{ formId }}-phone">Telefone:</label>
               <input type="tel"
                 id="{{ formId }}-phone"
                 name="contact[phone]"
@@ -85,7 +85,7 @@ It will also contain content from the contact page it self for extra information
 
               {% comment %} message part of the form {% endcomment %}
               <label
-                for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
+                for="{{ formId }}-message">Messagem:</label>
               <textarea
                 rows="10"
                 id="{{ formId }}-message"
