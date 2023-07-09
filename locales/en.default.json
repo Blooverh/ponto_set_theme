@@ -272,7 +272,6 @@
     },
     "contact": {
       "form": {
-        "title": "Contact form",
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",
