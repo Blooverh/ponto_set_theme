@@ -1,4 +1,4 @@
-input {
+input, textarea {
     font-family: 'Courier New', Courier, monospace !important;
     font-weight: 400 !important;
     touch-action: manipulation !important;
@@ -10,6 +10,12 @@ input {
     line-height:  1.2 !important;
 }
 
+textarea {
+    min-height: 100px;
+    @media (max-width: 767px){
+        height: 100px;
+    }
+}
 .form-vertical input, .form-vertical select, .form-vertical textarea {
     display: block;
     width: 100%;
