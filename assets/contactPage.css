@@ -29,3 +29,17 @@
     margin-bottom: 19.44444px;
 }
 
+.btn {
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 8px 15px;
+    background-color: yellow;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+    font-weight: 900;
+    font-size: 14px;
+
+  }
+
