@@ -1,4 +1,4 @@
-input, textarea {
+input {
     font-family: 'Courier New', Courier, monospace !important;
     font-weight: 400 !important;
     touch-action: manipulation !important;
@@ -11,6 +11,12 @@ input, textarea {
 }
 
 textarea {
+    border: 2px solid #faa902 !important;
+    background-color: white !important;
+    color: black !important;
+    max-width: 100% !important;
+    line-height:  1.2 !important;
+    border-radius: 2px;
     min-height: 100px;
     min-width: 100px;
     @media (max-width: 767px){
