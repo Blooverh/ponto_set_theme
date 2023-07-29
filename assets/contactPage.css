@@ -5,11 +5,15 @@
     margin: 0;
 
     border: 5px solid black;
-    background-color: red;
+    background-color: white;
     color: black;
     max-width: 100%;
     line-height:  1.2;
     border: 15px;
+}
+
+.grid {
+    display: flex;
 }
 
 .grid__item {
