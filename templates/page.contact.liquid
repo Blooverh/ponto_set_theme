@@ -5,35 +5,24 @@ It will also contain content from the contact page it self for extra information
 {% comment %} have to add settings to config folder {% endcomment %}
 {{ 'contactPage.css' | asset_url | stylesheet_tag }}
 
-  <div
-  class="width">
-  <div
-    class="grid">
-    <div
-      class="grid__item">
+  <div class="width"> <div class="grid">
+    <div class="grid__item">
       {% if page.content.size > 0 %}
-        <div
-          class="rte">
+        <div class="rte">
           {{ page.content }}
         </div>
       {% endif %}
 
-      <div
-        class="contact_pg">
-        <div
-          class="left_side">
-          <div
-            class="contact-form">
+      <div class="contact_pg">
+        <div class="left_side">
+          <div class="contact-form">
             {%- assign formId = 'ContactForm' -%}
               {% form 'contact', id: formId %}
               {% include 'form-status', form: form, form_id: formId %}
 
-              <div
-                class="grid grid-half">
-                <div
-                  class="grid__item name">
-                  <label
-                    for=" {{ formId }}-name">Nome:</label>
+              <div class="grid grid-half">
+                <div class="grid__item name">
+                  <label for=" {{ formId }}-name">Nome:</label>
                   <input
                     type="text"
                     id="{{ formId }}-name"
@@ -44,12 +33,9 @@ It will also contain content from the contact page it self for extra information
                     {{ customer.name }}
                   {% endif %}">
                 </div>
-                <div
-                  class="grid__item email">
-                  <label
-                    for="{{ formId }}-email">Email:
-                    <span
-                      aria-hidden="true">*</span>
+                <div class="grid__item email">
+                  <label for="{{ formId }}-email">Email:
+                    <span aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
@@ -62,11 +48,8 @@ It will also contain content from the contact page it self for extra information
                     {%- if form.errors contains 'email' -%}class="input--error"aria-invalid="true"aria-describedby="{{ formId }}-email-error"{%- endif -%}>
 
                   {% if form.errors contains 'email' %}
-                    <span
-                      id="{{ formId }}-email-error"
-                      class="input-error-message">
-                      <span
-                        class="visually-hidden">{{ 'general.accessability.error' | t }}
+                    <span id="{{ formId }}-email-error" class="input-error-message">
+                      <span class="visually-hidden">{{ 'general.accessability.error' | t }}
                       </span>
                       {% include 'icon-error' %}
                       <span>{{ form.errors.trasnlated_fields['email'] | capitalize }} {{ from.errors.messages['email'] }}.</span>
@@ -76,8 +59,7 @@ It will also contain content from the contact page it self for extra information
               </div>
 
               {% comment %} contact phone part of the form {% endcomment %}
-              <label
-                for="{{ formId }}-phone">Telefone:</label>
+              <label for="{{ formId }}-phone">Telefone:</label>
               <input type="tel"
                 id="{{ formId }}-phone"
                 name="contact[phone]"
@@ -85,8 +67,7 @@ It will also contain content from the contact page it self for extra information
                 value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
               {% comment %} message part of the form {% endcomment %}
-              <label
-                for="{{ formId }}-message">Messagem:</label>
+              <label for="{{ formId }}-message">Messagem:</label>
               <textarea
                 rows="10"
                 id="{{ formId }}-message"
@@ -104,21 +85,17 @@ It will also contain content from the contact page it self for extra information
           </div>
         </div>
 
-        <div
-          class="right_side">
-          <div
-            class="contact info">
+        <div class="right_side">
+          <div class="contact info">
             <h4>Morada:</h4>
             <p>Indesponivel</p>
             <h4>Telefone</h4>
             <p>
-              <a
-                href="tel:943941738">943941738</a>
+              <a href="tel:943941738">943941738</a>
             </p>
             <h4>contacto Geral:</h4>
             <p>
-              <a
-                href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
+              <a href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
             </p>
           </div>
         </div>
@@ -126,3 +103,10 @@ It will also contain content from the contact page it self for extra information
     </div>
   </div>
 </div>
+
+<style>
+  .btn {
+    border-radius: 50%;
+    border-color: yellow;
+  }
+</style>
