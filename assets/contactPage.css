@@ -1,15 +1,14 @@
 input {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    touch-action: manipulation;
-    margin: 0;
-
-    border: 5px solid black;
-    background-color: white;
-    color: black;
-    max-width: 100%;
-    line-height:  1.2;
-    border: 15px;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: 400 !important;
+    touch-action: manipulation !important;
+    margin: 0 !important;
+    border: 5px solid black !important;
+    background-color: white !important;
+    color: black !important;
+    max-width: 100% !important;
+    line-height:  1.2 !important;
+    border: 15px !important;
 }
 
 .form-vertical input, .form-vertical select, .form-vertical textarea {
