@@ -12,6 +12,21 @@ input {
     border: 15px;
 }
 
+.form-vertical input, .form-vertical select, .form-vertical textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 19.44444px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+label[for] {
+    cursor: pointer;
+}
+
 .grid {
     display: flex;
 }
