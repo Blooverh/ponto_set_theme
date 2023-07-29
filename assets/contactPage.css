@@ -12,9 +12,11 @@ input, textarea {
 
 textarea {
     min-height: 100px;
+    min-width: 100px;
     @media (max-width: 767px){
         height: 100px;
     }
+    
 }
 .form-vertical input, .form-vertical select, .form-vertical textarea {
     display: block;
