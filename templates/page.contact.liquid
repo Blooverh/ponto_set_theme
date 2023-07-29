@@ -77,36 +77,30 @@ It will also contain content from the contact page it self for extra information
               </textarea>
 
               {% comment %} submit button  {% endcomment %}
-              <input
+              <button
                 type="submit"
                 class="btn"
                 value="{{ 'contact.form.submit' | t }}">
-            {% endform %}
+              {% endform %}
+            </div>
           </div>
-        </div>
 
-        <div class="right_side">
-          <div class="contact info">
-            <h4>Morada:</h4>
-            <p>Indesponivel</p>
-            <h4>Telefone</h4>
-            <p>
-              <a href="tel:943941738">943941738</a>
-            </p>
-            <h4>contacto Geral:</h4>
-            <p>
-              <a href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
-            </p>
+          <div class="right_side">
+            <div class="contact info">
+              <h4>Morada:</h4>
+              <p>Indesponivel</p>
+              <h4>Telefone</h4>
+              <p>
+                <a href="tel:943941738">943941738</a>
+              </p>
+              <h4>contacto Geral:</h4>
+              <p>
+                <a href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  .btn {
-    border-radius: 50%;
-    border-color: yellow;
-  }
-</style>
