@@ -8,7 +8,6 @@ input {
     color: black !important;
     max-width: 100% !important;
     line-height:  1.2 !important;
-    border-radius: 15px !important;
 }
 
 .form-vertical input, .form-vertical select, .form-vertical textarea {
