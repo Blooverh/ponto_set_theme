@@ -3,7 +3,7 @@ input {
     font-weight: 400 !important;
     touch-action: manipulation !important;
     margin: 0 !important;
-    border: 5px solid black !important;
+    border: 2px solid #faa902 !important;
     background-color: white !important;
     color: black !important;
     max-width: 100% !important;
