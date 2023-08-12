@@ -4,6 +4,12 @@
     background-size: cover;    
     background-repeat: round;
 }
+/* This has to be changed for local editing */
+#shopify-section-template--20463393014079__MainSectionHomePage {
+  background: url(../assets/Banner.png) no-repeat;
+  background-size: cover;    
+  background-repeat: round;
+}
 
 .banner__box {
   @media (min-width: 686px) {
