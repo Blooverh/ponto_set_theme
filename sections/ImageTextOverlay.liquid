@@ -106,7 +106,6 @@
               {%- endcapture -%}
 
               <a
-                =
                 href="{{ section.settings.button_link }}"
                 class="button overlay_btn"
                 aria-label="{{ arialabel }}">
@@ -124,6 +123,10 @@
     </div>
   {%- endif -%}
 </div>
+
+{ {% stylesheet %}
+    
+{% endstylesheet %}}
 
 {% schema %}
 
