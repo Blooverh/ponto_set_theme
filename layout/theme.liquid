@@ -1,102 +1,30 @@
-{% comment %} contact page template for contact page that will have the contact form
-It will also contain content from the contact page it self for extra information
-{% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Ponto Set</title>
+    <link rel="stylesheet" href=" {{ 'style.scss.css' | asset_url }}">
+    <meta name="description" content="Ponto Set e a sua Loja Angolana para todos os productos de Tenis e Padel, oferecendo
+                    productos como raquetes, bolas, t-shirts, saias entre outros.">
+    <link rel="https://https://ponto-set.myshopify.com/">
+  </head>
 
-{% comment %} have to add settings to config folder {% endcomment %}
-{{ 'contactPage.css' | asset_url | stylesheet_tag }}
+  <body>
+    {% section 'header' %}
+    {{ content_for_header }}
 
-  <div class="width"> <div class="grid">
-    <div class="grid__item">
-      {% if page.content.size > 0 %}
-        <div class="rte">
-          {{ page.content }}
-        </div>
-      {% endif %}
+    <main
+      id="MainContent"
+      class="content-for-layout focus-none"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
-      <div class="contact_pg">
-        <div class="left_side">
-          <div class="contact-form">
-            {%- assign formId = 'ContactForm' -%}
-              {% form 'contact', id: formId %}
-              {% include 'form-status', form: form, form_id: formId %}
 
-              <div class="grid grid-half">
-                <div class="grid__item name">
-                  <label for=" {{ formId }}-name">Nome:</label>
-                  <input
-                    type="text"
-                    id="{{ formId }}-name"
-                    name="contact[name]"
-                    value="{% if form[name] %}
-                    {{ form[name] }}
-                  {% elsif customer %}
-                    {{ customer.name }}
-                  {% endif %}">
-                </div>
-                <div class="grid__item email">
-                  <label for="{{ formId }}-email">Email:
-                    <span aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="{{ formId }}-email"
-                    name="contact[email]"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    aria-required="true"
-                    {%- if form.errors contains 'email' -%}class="input--error"aria-invalid="true"aria-describedby="{{ formId }}-email-error"{%- endif -%}>
 
-                  {% if form.errors contains 'email' %}
-                    <span id="{{ formId }}-email-error" class="input-error-message">
-                      <span class="visually-hidden">{{ 'general.accessability.error' | t }}
-                      </span>
-                      {% include 'icon-error' %}
-                      <span>{{ form.errors.trasnlated_fields['email'] | capitalize }} {{ from.errors.messages['email'] }}.</span>
-                    </span>
-                  {% endif %}
-                </div>
-              </div>
-
-              {% comment %} contact phone part of the form {% endcomment %}
-              <label for="{{ formId }}-phone">Telefone:</label>
-              <input type="tel"
-                id="{{ formId }}-phone"
-                name="contact[phone]"
-                pattern="[0-9\-]*"
-                value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-
-              {% comment %} message part of the form {% endcomment %}
-              <label for="{{ formId }}-message">Messagem:</label>
-              <textarea
-                rows="10"
-                id="{{ formId }}-message"
-                name="contact[body]">
-                {% if form.body %}
-                  {{ form.body }}{% endif %}
-              </textarea>
-
-              {% comment %} submit button  {% endcomment %}
-              <button class="btn" type="submit">Enviar</button>
-            {% endform %}
-          </div>
-        </div>
-
-        <div class="right_side">
-          <div class="contact info">
-            <h4>Morada:</h4>
-            <p>Indesponivel</p>
-            <h4>Telefone</h4>
-            <p>
-              <a class="contact_anchor" href="tel:943941738">943941738</a>
-            </p>
-            <h4>contacto Geral:</h4>
-            <p>
-              <a class="contact_anchor" href="mailto:hugoaires@pontoset.com">hugoaires@pontoset.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    {% section 'footer' %}
+  </body>
+</html>
