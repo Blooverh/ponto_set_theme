@@ -1,15 +1,101 @@
 {
     "sections": {
-        "main":{
-            "type": "home",
-            "settings": {
-
-            }
+      "MainSectionHomePage": {
+        "type": "MainSectionHomePage",
+        "custom_css": [
+  
+        ],
+        "settings": {
+          "image_overlay_opacity": 0,
+          "image_height": "adapt",
+          "desktop_content_position": "middle-center",
+          "show_text_box": false,
+          "desktop_content_alignment": "center",
+          "mobile_content_alignment": "center",
+          "stack_images_on_mobile": true,
+          "show_text_below": true
         }
+      },
+      "ExploreButton": {
+        "type": "ExploreButton",
+        "settings": {
+          "text-box": "",
+          "link": "",
+          "linktext": "Explora Aqui"
+        }
+      },
+      "1eca8bb0-9de1-458e-b883-e367667856be": {
+        "type": "CustomContentSection",
+        "blocks": {
+          "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0": {
+            "type": "text",
+            "settings": {
+              "title": "Ponto Set A Sua Loja de Padel e Tenis",
+              "text": "",
+              "width": "33%",
+              "alignment": "center",
+              "align_text": "center"
+            }
+          }
+        },
+        "block_order": [
+          "template--19293825040703__1eca8bb0-9de1-458e-b883-e367667856be-16866151396db2d256-0"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "54dfb849-5cec-4059-8803-20f4404b8e24": {
+        "type": "collection-list",
+        "blocks": {
+          "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "raquetes-de-padel"
+            }
+          },
+          "1bb24026-774f-4e55-9880-8a105f3afb46": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "raquetes-de-tenis"
+            }
+          },
+          "150fef06-2e85-478a-9abd-c5647e21d6ab": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "roupa-de-mulher"
+            }
+          },
+          "80aa7999-93ba-4f5e-82e3-4f5f4f7233bc": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "roupa-de-homem"
+            }
+          },
+          "c52f8420-72e5-4cb3-a12b-9c9cba00337f": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "acessorios"
+            }
+          }
+        },
+        "block_order": [
+          "template--19293825040703__54dfb849-5cec-4059-8803-20f4404b8e24-1687039813df183b3b-0",
+          "1bb24026-774f-4e55-9880-8a105f3afb46",
+          "150fef06-2e85-478a-9abd-c5647e21d6ab",
+          "80aa7999-93ba-4f5e-82e3-4f5f4f7233bc",
+          "c52f8420-72e5-4cb3-a12b-9c9cba00337f"
+        ],
+        "settings": {
+          "title": "",
+          "grid": 5
+        }
+      }
     },
-    
-        "order": [
-            "main"
-        ]
-    
-}
+    "order": [
+      "MainSectionHomePage",
+      "ExploreButton",
+      "1eca8bb0-9de1-458e-b883-e367667856be",
+      "54dfb849-5cec-4059-8803-20f4404b8e24"
+    ]
+  }
