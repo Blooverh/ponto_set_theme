@@ -4,11 +4,14 @@
   {% else %}
     {% assign maximum_height = height %}
   {% endif -%}
+
   {%- assign maximum_width = maximum_height | times: image.aspect_ratio -%}
+
   #{{ img_id }} {
     max-width: {{ maximum_width }}px;
     max-height: {{ maximum_height }}px;
   }
+
   #{{ wrapper_id }} {
     max-width: {{ maximum_width }}px;
   }
