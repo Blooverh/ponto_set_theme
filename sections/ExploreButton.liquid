@@ -1,0 +1,32 @@
+{{ 'HomePageSectionsStyling.css' | asset_url | stylesheet_tag }}
+
+<div class="button-section" id="section-button">
+  <h3>Queres os Melhores Productos?</h3>
+  <a href="{{ section.settings.link }}" class="button">
+    {{ section.settings.linktext }}
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Call to action",
+    "class": "index-section",
+    "settings": [
+      {
+        "id": "text-box",
+        "type": "text",
+        "label": "Heading",
+        "default": "Title"
+      }, {
+        "id": "link",
+        "type": "url",
+        "label": "Button link"
+      }, {
+        "id": "linktext",
+        "type": "text",
+        "label": "Button text",
+        "default": "Click Here"
+      }
+    ]
+  }
+{% endschema %}
