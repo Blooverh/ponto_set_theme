@@ -96,10 +96,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/PadelBanner.jpg",
         "alignment": "center",
-        "image_layout": "fixed_width",
+        "image_layout": "full_width",
         "image_size": "large",
         "text_size": "medium",
-        "title": "Padel E Conosco em Angola",
+        "title": "",
         "text": "",
         "button_label": "",
         "button_link": ""
