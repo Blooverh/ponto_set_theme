@@ -9,12 +9,11 @@
   {% endif %}
   {% comment %} wraps image as a rectangle by diving the height with the min aspect ratio {% endcomment %}
   {% assign = wrapper_height = 100 | divided_by: min_aspect_ratio %}
-  {%- style -%}
+  {% style %}
     .image-{{ section.id }}{
-      height: {{ wrapper_height }}
-      vw !important;
+      height: 65vw !important;
     }
-  {%- endstyle -%}
+  {% endstyle %}
 {% endif %}
 
 {% comment %} Div that will contain the image and the options text, title and button all in respect to aspect ratio {% endcomment %}
@@ -28,7 +27,7 @@
         <div
         class="image-fixed-width image--adapt"
         id="image-{{section.id}}"
-        data-layout="{{section.settings.image_layout}}">
+        data-layout="{{ section.settings.image_layout }}">
         {% assign image_url = section.settings.image | image_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
         {% if section.settings.image.width < max_width %}
           {% assign slide_width = section.settings.image.width %}
@@ -59,7 +58,7 @@
         {% if section.settings.image != blank %}
           <img
             class="image-fixed-width lazyload lazypreload"
-            src="{{ section.settings.image | image_url: '300x300' }}"
+            src="{{ section.settings.image | image_url: '1080x720' }}"
             data-src="{{ image_url }}"
             loading="lazyload"
             data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048, 3000]"
@@ -85,7 +84,7 @@
         </noscript>
       </div>
     {% else %}
-      <div class="image image--{{ section.settings.image_size }} image-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} image_overlay{% endif %} box ratio-container lazyload js"id="image-{{ section.id }}"data-layout="{{ section.settings.hero_layout }}"{%- if section.settings.image -%}data-bgset="{% render 'bgset', image: section.settings.image %}"data-sizes="auto"data-parent-fit="cover"style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"{%- endif -%}>
+      <div class="image image--{{ section.settings.image_size }} image-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button != blank %} image_overlay{% endif %} box_img ratio-container lazyload js"id="image-{{ section.id }}"data-layout="{{ section.settings.image_layout }}"{%- if section.settings.image -%}data-bgset="{% render 'bgset', image: section.settings.image %}"data-sizes="auto"data-parent-fit="cover"style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '1080x720' }});"{%- endif -%}>
         {%- if section.settings.image == blank -%}
           <div class="placeholder-background">
             {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -124,7 +123,7 @@
         </div>
       </div>
       <noscript>
-        <div class="image image--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} image_overlay{% endif %}"{% if section.settings.image %}style="background-image: url('{{ section.settings.image | img_url: '3000x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+        <div class="image image--{{ section.settings.image_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} image_overlay{% endif %}"{% if section.settings.image %}style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
       </noscript>
     {% endif %}
     {%- if section.settings.image_layout == 'fixed_width' -%}
