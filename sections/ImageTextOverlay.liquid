@@ -1,3 +1,5 @@
+{{ 'ImageTextOverlay.css' | asset_url | stylesheet_tag }}
+
 {% comment %} layout area in the browser will have a specific width x height based section settings  {% endcomment %}
 {% if section.settings.image_layout == 'full-width' and section.settings.image_size == 'adapt' %}
   {% if section.settings.image.aspect_ratio == blank %}
@@ -7,6 +9,12 @@
   {% endif %}
   {% comment %} wraps image as a rectangle by diving the height with the min aspect ratio {% endcomment %}
   {% assign = wrapper_height = 100 | divided_by: min_aspect_ratio %}
+  {%- style -%}
+    .image-{{ section.id }}{
+      height: {{ wrapper_height }}
+      vw !important;
+    }
+  {%- endstyle -%}
 {% endif %}
 
 {% comment %} Div that will contain the image and the options text, title and button all in respect to aspect ratio {% endcomment %}
@@ -54,7 +62,7 @@
             src="{{ section.settings.image | image_url: '300x300' }}"
             data-src="{{ image_url }}"
             loading="lazyload"
-            data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048]"
+            data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048, 3000]"
             data-aspectratio="{{ section.settings.image.aspect_ratio }}"
             data-sizes="auto"
             style="{% if slide_width <= max_width %}
@@ -116,17 +124,13 @@
         </div>
       </div>
       <noscript>
-        <div class="image image--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} image_overlay{% endif %}"{% if section.settings.image %}style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+        <div class="image image--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} image_overlay{% endif %}"{% if section.settings.image %}style="background-image: url('{{ section.settings.image | img_url: '3000x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
       </noscript>
     {% endif %}
     {%- if section.settings.image_layout == 'fixed_width' -%}
     </div>
   {%- endif -%}
 </div>
-
-{ {% stylesheet %}
-    
-{% endstylesheet %}}
 
 {% schema %}
 
