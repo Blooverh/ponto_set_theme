@@ -4,7 +4,7 @@
       {% if section.settings.section_title != blank %}
         <div class="text_header-{{ section.settings.text_size }} text-center">
           <h2 class="text_heading">
-            {{ section.settings.section_title }}
+            {{ section.settings.section_title | escape }}
           </h2>
         </div>
       {% endif %}
@@ -16,6 +16,13 @@
     </div>
   </div>
 </div>
+
+{% style %}
+
+  .text_header-{{ section.settings.text_size }}{
+    display: flex;
+  }
+{% endstyle %}
 
 {% schema %}
   {
