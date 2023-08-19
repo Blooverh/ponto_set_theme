@@ -39,16 +39,12 @@
     "class": "index-section",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "full_width",
-        "label": "Wide display"
-      }, {
         "type": "text",
-        "id": "section-title",
+        "id": "section_title",
         "label": "Heading",
         "default": "Talk about your brand"
       }, {
-        "type": "text",
+        "type": "richtext",
         "id": "text",
         "label": "Text",
         "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
@@ -60,24 +56,24 @@
         "options": [
 
           {
-            "label": "small",
+            "label": "Small",
             "value": "small"
           }, {
-            "label": "medium",
+            "label": "Medium",
             "value": "medium"
           }, {
-            "label": "large",
+            "label": "Large",
             "value": "large"
+          }
+        ],
+        "presets": [
+          {
+            "name": "Title text",
+            "category": "Text"
           }
         ]
       }
 
-    ],
-    "presets": [
-      {
-        "name": "Title text",
-        "category": "Text"
-      }
     ]
   }
 {% endschema %}
