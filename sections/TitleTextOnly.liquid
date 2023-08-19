@@ -10,65 +10,58 @@
       {% endif %}
       {% if section.settings.section_text != blank %}
         <div class="text_main_text">
-            {{ section.settings.text }}
+          {{ section.settings.text }}
         </div>
+      {% endif %}
     </div>
   </div>
 </div>
 
 {% schema %}
-    {
-        "name": "Title Text",
-        "class": "index-section",
-        "settings": [
-            {
-                "type": "checkbox",
-                "id":"full_width",
-                "label": "Wide display"
-            },
+  {
+    "name": "Title Text",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Wide display"
+      }, {
+        "type": "text",
+        "id": "section-title",
+        "label": "Heading",
+        "default": "Talk about your brand"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+      }, {
+        "type": "select",
+        "id": "text_size",
+        "label": "Size",
+        "default": "medium",
+        "options": [
 
-            {
-                "type": "text",
-                "id": "section-title",
-                "label": "Heading",
-                "default": "Talk about your brand"
-            },
-
-            {
-                "type": "text",
-                "id": "text",
-                "label":"Text",
-                "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-            },
-
-            {
-                "type": "select",
-                "id": "text_size",
-                "label": "Size",
-                "default": "medium",
-                "options": [
-
-                        {
-                            "label": "small",
-                            "value": "small"
-                        },
-                        {
-                            "label": "medium",
-                            "value":"medium"
-                        },
-                        {
-                            "label": "large",
-                            "value": "large"
-                        }
-                ]
-            }
-
-        ],
-        "presets": [
-            {
-                "name": "Title text",
-                "category": "Text"
-            }
+          {
+            "label": "small",
+            "value": "small"
+          }, {
+            "label": "medium",
+            "value": "medium"
+          }, {
+            "label": "large",
+            "value": "large"
+          }
         ]
-    }
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Title text",
+        "category": "Text"
+      }
+    ]
+  }
 {% endschema %}
