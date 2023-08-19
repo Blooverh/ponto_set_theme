@@ -26,11 +26,14 @@
     },
     "666f478a-2a3c-4194-b186-18aeb2ac883e": {
       "type": "TitleTextOnly",
+      "custom_css": [
+
+      ],
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "section-title": "Ponto Set apresenta parceria com:",
         "text": "Head",
-        "text_size": "medium"
+        "text_size": "small"
       }
     },
     "1eca8bb0-9de1-458e-b883-e367667856be": {
