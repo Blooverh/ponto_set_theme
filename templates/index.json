@@ -24,6 +24,15 @@
         "linktext": "Explora Aqui"
       }
     },
+    "666f478a-2a3c-4194-b186-18aeb2ac883e": {
+      "type": "TitleTextOnly",
+      "settings": {
+        "full_width": false,
+        "section-title": "Ponto Set apresenta parceria com:",
+        "text": "Head",
+        "text_size": "medium"
+      }
+    },
     "1eca8bb0-9de1-458e-b883-e367667856be": {
       "type": "CustomContentSection",
       "blocks": {
@@ -104,23 +113,14 @@
         "button_label": "",
         "button_link": ""
       }
-    },
-    "666f478a-2a3c-4194-b186-18aeb2ac883e": {
-      "type": "TitleTextOnly",
-      "settings": {
-        "full_width": false,
-        "section-title": "Ponto Set apresenta parceria com:",
-        "text": "Head",
-        "text_size": "medium"
-      }
     }
   },
   "order": [
     "MainSectionHomePage",
     "ExploreButton",
+    "666f478a-2a3c-4194-b186-18aeb2ac883e",
     "1eca8bb0-9de1-458e-b883-e367667856be",
     "54dfb849-5cec-4059-8803-20f4404b8e24",
-    "e63b2bac-9a2d-497d-8685-46904c93137d",
-    "666f478a-2a3c-4194-b186-18aeb2ac883e"
+    "e63b2bac-9a2d-497d-8685-46904c93137d"
   ]
 }
