@@ -16,14 +16,6 @@
         "show_text_below": true
       }
     },
-    "ExploreButton": {
-      "type": "ExploreButton",
-      "settings": {
-        "text-box": "",
-        "link": "",
-        "linktext": "Explora Aqui"
-      }
-    },
     "666f478a-2a3c-4194-b186-18aeb2ac883e": {
       "type": "TitleTextOnly",
       "custom_css": [
@@ -51,6 +43,14 @@
       ],
       "settings": {
         "title": ""
+      }
+    },
+    "ExploreButton": {
+      "type": "ExploreButton",
+      "settings": {
+        "text-box": "",
+        "link": "",
+        "linktext": "Explora Aqui"
       }
     },
     "1eca8bb0-9de1-458e-b883-e367667856be": {
@@ -137,9 +137,9 @@
   },
   "order": [
     "MainSectionHomePage",
-    "ExploreButton",
     "666f478a-2a3c-4194-b186-18aeb2ac883e",
     "68217743-629b-49b0-ae18-8a28e737d1b5",
+    "ExploreButton",
     "1eca8bb0-9de1-458e-b883-e367667856be",
     "54dfb849-5cec-4059-8803-20f4404b8e24",
     "e63b2bac-9a2d-497d-8685-46904c93137d"
