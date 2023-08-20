@@ -8,8 +8,8 @@
           </h2>
         </div>
       {% endif %}
-      {% if section.settings.section_text != blank %}
-        <div class="text_main_text">
+      {% if section.settings.text != blank %}
+        <div class="text_main_text-{{ section.settings.text_size }}">
           {{ section.settings.text }}
         </div>
       {% endif %}
@@ -29,19 +29,33 @@
     padding-bottom: 20px;
   }
 
-  .text_main_text {
-    display: block;
+  .text_heading {
+    color: black;
+    font-size: 50px;
+  }
+
+  .text_main_text-medium {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .text_main_text-medium > p {
+    color: black;
+  }
+
+  .text_main_text-large {
+    font-size: 60px;
   }
 
   .grid_item {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 {% endstyle %}
 
 {% schema %}
   {
-    "name": "Title Text",
+    "name": "Title text",
     "class": "index-section",
     "settings": [
       {
@@ -78,7 +92,7 @@
 
     "presets": [
       {
-        "name": "Rich text",
+        "name": "Title text",
         "category": "Text"
       }
     ]

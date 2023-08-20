@@ -1,0 +1,79 @@
+<div class="width">
+  {% if section.blocks.size > 0 %}
+    <ul class="logo-bar">
+      {% for block in section.blocks %}
+        <li class="logo_bar_item">
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="logo-bar-link">
+            {% endif %}
+
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar_image' }}
+
+            {% else %}
+              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+
+            {% if block.settings.link != blank %}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    {% render 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Logo List",
+    "class": "index-section",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Logo List"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Logo List",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "logo_image"
+          }, {
+            "type": "logo_image"
+          }, {
+            "type": "logo_image"
+          }, {
+            "type": "logo_image"
+          }
+        ]
+      }
+
+    ]
+  }
+{% endschema %}
