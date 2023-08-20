@@ -31,7 +31,7 @@
       ],
       "settings": {
         "section_title": "Ponto Set Tem parceria com a:",
-        "text": "<p>Head{{ shop.brand.slogan }}<\/p>",
+        "text": "<p>Head<\/p>",
         "text_size": "small"
       }
     },
