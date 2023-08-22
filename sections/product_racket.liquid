@@ -12,16 +12,69 @@
   {% assign price = current_variant.price %}
 
   {% comment %} 
-    Might need to create settings for sizing the product image 
+  Might need to create settings for sizing the product image 
+
+  This section will not have zooming functionalities 
+
+  will have to debug thumbnail functionality - idk if it is in javascript form
   {% endcomment %}
-    
     <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.image_size }}-image{% endif %}">
         <div class="grid_item product-single_photo">
-            {%  comment  %} Assign a featured image whether is a selected one or the first available out of all the variants {% endcomment %} 
-            {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image  %}
+            {% comment %} Assign a featured image whether is a selected one or the first available out of all the variants {% endcomment %}
+            {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
             {% for image in product.images %}
-                {%  capture img_id  %} featured_image-{{ section.id }}-{{ image.id }} {% endcapture %}
+                {% capture img_id %}featured_image-{{ section.id }}-{{ image.id }}{% endcapture %}
+                {% capture img_class %}product-featured-img{% endcapture %}
+                {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                <div class="product-single_photo-wrapper" id="{{ img_id }}">
+                    <div id="{{ img_id }}"style="padding-top: 10%;"class="product_single_photo"data-image-id="{{ image.id }}">
+
+                        <img id="{{ img_id }}"class="feature-row_image {{ img_class }}"loading="lazyload"src="{{ image | img_url: '1080x1080' }}"data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"data-aspectratio="{{ image.aspect_ratio }}"data-sizes="auto"tabindex="-1"alt="{{ image.alt | escape }}">
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
-  
+
 </div>
+
+{% stylesheet %}
+    .product-single_photo-wrapper{
+        margin: 0 auto;
+        width:100%;
+    }
+
+    .product_single_photo{
+        margin: 0 auto;
+        min-height:1px;
+        width:100%;
+        height:100%;
+        position: relative;
+        padding-bottom: 4px;
+    }
+    
+    .product-featured-img {
+        display: flex;
+        /* height:400px; */
+        height: calc(25% - 2px);
+        width: calc(25% - 4px);
+        padding-bottom: 50px;
+    }
+
+    @media (max-width: 767px){
+        .product-featured-img{
+            order: 1;
+            width:175px;
+            height: 320px;
+            display: block;
+        }
+
+        .product-single_photo-wrapper{
+            margin: 0 auto;
+            width:100%;
+            text-align: -webkit-center;
+        }
+    }
+{% endstylesheet %}
+
