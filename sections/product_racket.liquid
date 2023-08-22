@@ -1,0 +1,27 @@
+<div class="product-template width"
+  id="ProductSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="racket_product"
+  data-enable-history-state="true"
+  data-ajax-enabled=" {{ settings.enable_ajax }}">
+
+  {% comment %} Get first variant or deep linked one {% endcomment %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+  {% assign product_image_scale = '2' %}
+  {% assign compare_at_price = current_variant.compare_at_price %}
+  {% assign price = current_variant.price %}
+
+  {% comment %} 
+    Might need to create settings for sizing the product image 
+  {% endcomment %}
+    
+    <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.image_size }}-image{% endif %}">
+        <div class="grid_item product-single_photo">
+            {%  comment  %} Assign a featured image whether is a selected one or the first available out of all the variants {% endcomment %} 
+            {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image  %}
+            {% for image in product.images %}
+                {%  capture img_id  %} featured_image-{{ section.id }}-{{ image.id }} {% endcapture %}
+        </div>
+    </div>
+  
+</div>
