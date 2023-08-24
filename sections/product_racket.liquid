@@ -37,6 +37,47 @@
         </div>
     </div>
 
+    {%  comment  %} Missing thumbnail functionality for more than 1 image of the product  {% endcomment %}
+
+
+    {% comment  %} content part will include dropdown selector for the rackets {% endcomment %}
+
+    <div class="grid_item-prod-description">
+        <div class="prod-single_meta">
+
+            <h1 class="product-title"> {{ product.title }} </h1>
+            <div class="PartId">Part ID: {% assign current_variant = product.selected_or_first_available_variant %}
+                <span class="variantPart-id">{{ current_variant.sku }}</span>
+            </div>
+
+            <div class="prod-price">
+                {% comment  %} {% render 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %} {% endcomment %}
+                {% assign money_price = price | money %}
+                {{ money_price }}
+            </div>
+
+            {% if shop.taxes_included or shop.shipping_policy.body != blank %}
+                <div class="prod-policies">
+                    {% if shop.taxes_included %}
+                        {{ 'products.product.include_taxes' | t }}
+                    {% endif %}
+
+                    {% if shop.shipping_policy.body != blank %}
+                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {% endif %}
+                </div>
+            {% endif %}
+                
+            {% capture "form_class" %}
+                product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {% endif %}
+            {% endcapture %}
+        </div>
+
+        <div class="prod-description">
+            {{ product.description }}
+        </div>
+        
+    </div>
 </div>
 
 {% stylesheet %}
