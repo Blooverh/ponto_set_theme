@@ -76,7 +76,18 @@
         <div class="prod-description">
             {{ product.description }}
         </div>
-        
+
+        {% comment %} Add to cart and payment method {% endcomment %}
+
+        <div class="product-add-cart">
+            <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
+                <button type="submit" name="add" aria-label="{% unless current_variant.available %} {{ 'products.product.sold_out' | t }} {% else %} {{ 'products.product.add_to_cart' | t }} {% endunless %}"
+                    class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
+                    data-add-to-cart-text>
+
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 
