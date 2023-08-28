@@ -185,3 +185,71 @@
     }
 {% endstylesheet %}
 
+{% schema %}
+    {
+      "name": "Product Pages",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_size",
+          "label": "Image Size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label":"Large"
+            },
+            {
+              "value": "full",
+              "label": "Full-width"
+            }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_quantity_selector",
+          "label": "Show Quantity Selector",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_variant_labels",
+          "label": "Show Variant Labels",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "label": "Show Vendor",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_zoom",
+          "label": "Enable Image Zoom",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_payment_button",
+          "label": "Show dynamic checkout button",
+          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_share_buttons",
+          "label": "Show Social Media buttons",
+          "default": true
+        }
+      ]
+    }
+    {% endschema %}
