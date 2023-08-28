@@ -164,6 +164,18 @@
           "color_footer_bg": "#f5f5f5",
           "color_footer_text": "#faa902"
         }
+      },
+      "product_racket": {
+        "type": "product_racket",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": false,
+          "enable_payment_button": true,
+          "show_share_buttons": false
+        }
       }
     },
     "content_for_index": [
