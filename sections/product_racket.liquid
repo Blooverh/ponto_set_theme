@@ -73,23 +73,44 @@
             {% endcapture %}
         </div>
 
-        <div class="prod-description">
-            {{ product.description }}
-        </div>
+        {% comment %} Add to cart and payment method 
+            ADD-TO-CART: Missing java script functionality to send it to cart
+            Same thing might happen to buy now button
+        {% endcomment %}
+        {% form 'product', product, class: form_class, novalidate: 'novalidate', data-product-form:'' %}
+            <div class="product-add-cart">
+                <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
+                    <button type="submit" name="add" aria-label="{% unless current_variant.available %} {{ 'products.product.sold_out' | t }} {% else %} {{ 'products.product.add_to_cart' | t }} {% endunless %}"
+                        class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
+                        data-add-to-cart>
+                            <span data-add-to-cart-text>
+                                {% unless current_variant.available %}
+                                    {{ 'products.product.sold_out' | t }}
+                                {% else %}
+                                    {{ 'products.product.add_to_cart' | t }}
+                                {% endunless %}
+                            </span>
 
-        {% comment %} Add to cart and payment method {% endcomment %}
+                            <span class="hide" data-loader>
+                                {% render 'icon-spinner' %}
+                            </span>
+                    </button>
 
-        <div class="product-add-cart">
-            <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
-                <button type="submit" name="add" aria-label="{% unless current_variant.available %} {{ 'products.product.sold_out' | t }} {% else %} {{ 'products.product.add_to_cart' | t }} {% endunless %}"
-                    class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
-                    data-add-to-cart-text>
-
-                </button>
-            </div>
-        </div>
+                    {% if section.settings.enable_payment_button %}
+                        {{ form | payment_button }}
+                    {% endif %}
+                </div>
+            </div>        
+            {% endform %}
     </div>
+    
 </div>
+
+     {%  comment  %} Product description, will have width of page width {% endcomment %}
+
+     <div class="width prod-description">
+        {{ product.description }}
+    </div>
 
 {% stylesheet %}
     .product-single_photo-wrapper{
@@ -110,8 +131,42 @@
         display: flex;
         /* height:400px; */
         height: calc(25% - 2px);
-        width: calc(25% - 4px);
+        width: calc(50% - 4px);
         padding-bottom: 50px;
+        padding-left:50px;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .product-template{
+        display:flex;
+    }
+
+    .product-single {
+        flex: auto;
+    }
+
+    .grid_item-prod-description {
+        flex: auto;
+        padding-top: 69px;
+    }
+
+
+    .variantPart-id {
+        color: black !important;
+    }
+
+    .prod-price {
+        color: black;
+        padding-top: 25px;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    .prod-description {
+        color: black;
     }
 
     @media (max-width: 767px){
