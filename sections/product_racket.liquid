@@ -77,40 +77,70 @@
             ADD-TO-CART: Missing java script functionality to send it to cart
             Same thing to buy now button
         {% endcomment %}
-        {% form 'product', product, class: form_class, novalidate: 'novalidate', data-product-form:'' %}
-            <div class="product-add-cart">
-                <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
-                    <button type="submit" name="add" aria-label="{% unless current_variant.available %} {{ 'products.product.sold_out' | t }} {% else %} {{ 'products.product.add_to_cart' | t }} {% endunless %}"
-                        class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
-                        data-add-to-cart>
-                            <span data-add-to-cart-text>
-                                {% unless current_variant.available %}
-                                    {{ 'products.product.sold_out' | t }}
-                                {% else %}
-                                    {{ 'products.product.add_to_cart' | t }}
-                                {% endunless %}
-                            </span>
 
-                            <span class="hide" data-loader>
-                                {% render 'icon-spinner' %}
-                            </span>
+        {% comment %}
+        <div class="prod-form_control_group-submit">
+            <div class="prod-form_item-submit"
+                {% if section.settings.enable_payment_button %} payment-btn {% endif %}
+                {% if product.has_only_default_variant %} product-form_item-noVariant {% endif %}>
+                {% form 'product', product, class: form_class, novalidate: 'novalidate', data-product-form:'' %}
+                    <div class="product-add-cart">
+                        <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
+                            <button type="submit" name="add"
+                             class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
+                                data-add-to-cart>
+                                    <span data-add-to-cart-text>
+                                        {% unless current_variant.available %}
+                                            {{ 'products.product.sold_out' | t }}
+                                        {% else %}
+                                            {{ 'products.product.add_to_cart' | t }}
+                                        {% endunless %}
+                                    </span>
+        
+                                    <span class="hide" data-loader>
+                                        {% render 'icon-spinner' %}
+                                    </span>
+                            </button>
+        
+                            {% if section.settings.enable_payment_button %}
+                                {{ form | payment_button }}
+                            {% endif %}
+                        </div>
+                    </div>        
+                    {% endform %}
+            </div>
+        </div>
+        {% endcomment %}
+
+        {% form 'product', product %}
+
+            <div class="product-quantity">
+                <label for="quantity">Quantity</label>
+                <input name="quantity" id="quantity" value="1">
+            </div>
+
+            <div class="product-add-cart">
+                <div class="product-form_item payment-btn">
+                    <button type="submit" class="btn-prod-form-cart-submit btn-second-accent">
+                        Add to Cart
                     </button>
 
                     {% if section.settings.enable_payment_button %}
                         {{ form | payment_button }}
                     {% endif %}
                 </div>
-            </div>        
-            {% endform %}
+            </div>
+
+        {% endform %}
     </div>
     
 </div>
 
-     {%  comment  %} Product description, will have width of page width {% endcomment %}
+{%  comment  %} Product description, will have width of page width {% endcomment %}
 
-     <div class="width prod-description">
-        {{ product.description }}
-    </div>
+<div class="prod-description width">
+    {{ product.description }}
+</div>
 
 {% stylesheet %}
 
