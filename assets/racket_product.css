@@ -1,0 +1,107 @@
+.product {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-image {
+    height: calc(25% - 2px);
+    width: calc(30% - 4px);
+    padding-top: 80px;
+    margin-left: 100px;
+}
+.product-content {
+    margin-top: 75px;
+    width: 600px;
+    margin-left: 15px;
+}
+
+.product-content h2{
+    font-size: 40px;
+}
+
+.SKU-id {
+    padding-top: 10px;
+}
+
+.variant-sku {
+    color: black;
+}
+
+.product-price {
+    margin-top: 10px;
+    font-size: 30px;
+    color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.product-quantity {
+    margin-top: 10px;
+    width:300px;
+    padding: 8px;
+    border: 1px solid #FAA902;
+    border-radius: 10px;
+
+}
+
+.product-quantity label{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.product-quantity input{
+    font-size: 15px;
+}
+
+.button.product-add{
+    margin-top: 20px;
+    padding: 5px;
+    display: block;
+    font-size: 24px;
+    width: 300px;
+    cursor: pointer;
+    text-decoration:none;
+    color: black;
+    background-color: #FAA902;
+    border: none;
+    border-radius: 0.62em;
+    box-shadow: 0 0.25em #999999;
+}
+
+.button.product-add:hover {
+background-color: #B67B03
+}
+
+.button.product-add:active {
+background-color: #5c6ac4;
+box-shadow: 0 0.125em #B67B03;
+transform: translateY(0.25em);
+}
+
+.shopify-payment-button{
+    margin-top: 15px;
+    width: 300px;
+    border-radius: 15px !important;
+}
+
+@media (max-width: 767px){
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product-content h2{
+        font-size: 20px;
+        display: flex;
+        transform: translateX(52px);
+        padding-bottom: 10px;
+    }
+
+    .product-image {
+        padding-top:20px;
+        display: flex;
+        justify-content: space-around;
+        width: auto;
+        height: auto;
+        margin-left:0px;
+    }
+}

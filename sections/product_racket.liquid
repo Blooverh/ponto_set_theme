@@ -1,317 +1,70 @@
-<div class="product-template width"
-  id="ProductSection-{{ section.id }}"
-  data-section-id="{{ section.id }}"
-  data-section-type="racket_product"
-  data-enable-history-state="true"
-  data-ajax-enabled=" {{ settings.enable_ajax }}">
+{% comment %} To ADD:
+    - SOME TYPE OF CAROUSSEL TO DISPLAY DIFFERENT VARIANT IMAGES
+        for desktop and mobile 
+    - allow only numbers to be typed in quantity (not sure how to do it)
+    - related products snipper 
+    - Description to be added (check head.com for examples)
+{% endcomment %}
 
-  {% comment %} Get first variant or deep linked one {% endcomment %}
-  {% assign current_variant = product.selected_or_first_available_variant %}
-  {% assign product_image_scale = '2' %}
-  {% assign compare_at_price = current_variant.compare_at_price %}
-  {% assign price = current_variant.price %}
+{{ 'racket_product.css' | asset_url | stylesheet_tag }}
 
-  {% comment %} 
-  Might need to create settings for sizing the product image 
+<div class="product-page">
+  <div class="width">
+    <div class="product">
+        {% assign selectedVariant = product.first_or_selected_variant %}
+      <div class="product-image">
+        <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+      </div>
 
-  This section will not have zooming functionalities 
-
-  will have to debug thumbnail functionality - idk if it is in javascript form
-  {% endcomment %}
-    <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.image_size }}-image{% endif %}">
-        <div class="grid_item product-single_photo">
-            {% comment %} Assign a featured image whether is a selected one or the first available out of all the variants {% endcomment %}
-            {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-            {% for image in product.images %}
-                {% capture img_id %}featured_image-{{ section.id }}-{{ image.id }}{% endcapture %}
-                {% capture img_class %}product-featured-img{% endcapture %}
-                {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
-                <div class="product-single_photo-wrapper" id="{{ img_id }}">
-                    <div id="{{ img_id }}"style="padding-top: 10%;"class="product_single_photo"data-image-id="{{ image.id }}">
-
-                        <img id="{{ img_id }}"class="feature-row_image {{ img_class }}"loading="lazyload"src="{{ image | img_url: '1080x1080' }}"data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"data-aspectratio="{{ image.aspect_ratio }}"data-sizes="auto"tabindex="-1"alt="{{ image.alt | escape }}">
-                    </div>
-                </div>
-            {% endfor %}
+      <div class="product-content">
+        <h2>{{ product.title }}</h2>
+        <div class="SKU-id">SKU:  {% assign selectedVariant = product.selected_or_first_available_variant %}
+            <span class="variant-sku">{{ selectedVariant.sku }}</span>
         </div>
-    </div>
-
-    {%  comment  %} Missing thumbnail functionality for more than 1 image of the product  {% endcomment %}
-
-
-    {% comment  %} content part will include dropdown selector for the rackets {% endcomment %}
-
-    <div class="grid_item-prod-description">
-        <div class="prod-single_meta">
-
-            <h1 class="product-title"> {{ product.title }} </h1>
-            <div class="PartId">Part ID: {% assign current_variant = product.selected_or_first_available_variant %}
-                <span class="variantPart-id">{{ current_variant.sku }}</span>
-            </div>
-
-            <div class="prod-price">
-                {% comment  %} {% render 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %} {% endcomment %}
-                {% assign money_price = price | money %}
-                {{ money_price }}
-            </div>
-
-            {% if shop.taxes_included or shop.shipping_policy.body != blank %}
-                <div class="prod-policies">
-                    {% if shop.taxes_included %}
-                        {{ 'products.product.include_taxes' | t }}
-                    {% endif %}
-
-                    {% if shop.shipping_policy.body != blank %}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                    {% endif %}
-                </div>
-            {% endif %}
-                
-            {% capture "form_class" %}
-                product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {% endif %}
-            {% endcapture %}
-        </div>
-
-        {% comment %} Add to cart and payment method 
-            ADD-TO-CART: Missing java script functionality to send it to cart
-            Same thing to buy now button
-        {% endcomment %}
-
-        {% comment %}
-        <div class="prod-form_control_group-submit">
-            <div class="prod-form_item-submit"
-                {% if section.settings.enable_payment_button %} payment-btn {% endif %}
-                {% if product.has_only_default_variant %} product-form_item-noVariant {% endif %}>
-                {% form 'product', product, class: form_class, novalidate: 'novalidate', data-product-form:'' %}
-                    <div class="product-add-cart">
-                        <div class="product-form_item {% if section.settings.enable_payment_button %} payment-btn {% endif %}">
-                            <button type="submit" name="add"
-                             class="btn-prod-form-cart-submit{% if section.settings.enable_payment_button %} btn-second-accent {% endif %}"
-                                data-add-to-cart>
-                                    <span data-add-to-cart-text>
-                                        {% unless current_variant.available %}
-                                            {{ 'products.product.sold_out' | t }}
-                                        {% else %}
-                                            {{ 'products.product.add_to_cart' | t }}
-                                        {% endunless %}
-                                    </span>
-        
-                                    <span class="hide" data-loader>
-                                        {% render 'icon-spinner' %}
-                                    </span>
-                            </button>
-        
-                            {% if section.settings.enable_payment_button %}
-                                {{ form | payment_button }}
-                            {% endif %}
-                        </div>
-                    </div>        
-                    {% endform %}
-            </div>
-        </div>
-        {% endcomment %}
+        <p class="product-price">{{ selectedVariant.price | money }}</p>
 
         {% form 'product', product %}
+          <label class="product-option">Options</label>
+          <select class="product-select" name="id">
+            {% for variant in product.variants %}
+              <option
+                {% if selectedVariant.id == variant.id %}
+                  selected
+                {% endif %}
+                value="{{ variant.id }}"
+              >
+                {{ variant.title }}
+              </option>
+            {% endfor %}
+          </select>
 
-            <div class="product-quantity">
-                <label for="quantity">Quantity</label>
-                <input name="quantity" id="quantity" value="1">
-            </div>
+          <div class="product-quantity">
+            <label for="quantity">Quantity:</label>
+            <input name="quantity" id="quantity" value="1">
+          </div>
 
-            <div class="product-add-cart">
-                <div class="product-form_item payment-btn">
-                    <button type="submit" class="btn-prod-form-cart-submit btn-second-accent">
-                        Add to Cart
-                    </button>
+          <button class="button product-add" type="submit">Add to cart</button>
 
-                    {% if section.settings.enable_payment_button %}
-                        {{ form | payment_button }}
-                    {% endif %}
-                </div>
-            </div>
-
+          <div class="buyNow">
+            {{ form | payment_button }}
+          </div>
         {% endform %}
+      </div>
     </div>
-    
+  </div>
 </div>
-
-{%  comment  %} Product description, will have width of page width {% endcomment %}
-
-<div class="prod-description width">
-    {{ product.description }}
-</div>
-
-{% stylesheet %}
-
-    .product-title {
-        font-size:40px;
-    }
-    .product-single_photo-wrapper{
-        margin: 0 auto;
-        width:100%;
-    }
-
-    .product_single_photo{
-        margin: 0 auto;
-        min-height:1px;
-        width:100%;
-        height:100%;
-        position: relative;
-        padding-bottom: 4px;
-    }
-    
-    .product-featured-img {
-        display: flex;
-        /* height:400px; */
-        height: calc(25% - 2px);
-        width: calc(50% - 4px);
-        padding-bottom: 50px;
-        padding-left:50px;
-    }
-
-    .hide {
-        display: none !important;
-    }
-
-    .product-template{
-        display:flex;
-    }
-
-    .product-single {
-        flex: auto;
-    }
-
-    .grid_item-prod-description {
-        flex: auto;
-        padding-top: 69px;
-    }
-
-
-    .variantPart-id {
-        color: black !important;
-    }
-
-    .prod-price {
-        color: black;
-        padding-top: 25px;
-        font-weight: 700;
-        font-size: 30px;
-    }
-
-    .prod-description {
-        color: black;
-    }
-
-    .btn-prod-form-cart-submit.btn-second-accent{
-        margin-top: 20px;
-        padding: 5px;
-        display: block;
-        font-size: 24px;
-        width: 100%;
-        cursor: pointer;
-        text-decoration:none;
-        color: black;
-        background-color: #FAA902;
-        border: none;
-        border-radius: 0.62em;
-        box-shadow: 0 0.25em #999999;
-    }
-
-    .btn-prod-form-cart-submit.btn-second-accent:hover {
-    background-color: #B67B03
-    }
-
-    .btn-prod-form-cart-submit.btn-second-accent:active {
-    background-color: #5c6ac4;
-    box-shadow: 0 0.125em #B67B03;
-    transform: translateY(0.25em);
-    }
-
-    .shopify-payment-button{
-        margin-top: 10px;
-    }
-    @media (max-width: 767px){
-        .product-featured-img{
-            order: 1;
-            width:175px;
-            height: 320px;
-            display: block;
-        }
-
-        .product-single_photo-wrapper{
-            margin: 0 auto;
-            width:100%;
-            text-align: -webkit-center;
-        }
-    }
-{% endstylesheet %}
+<div class="product-description width">
+          {{ product.description }}
+        </div>
 
 {% schema %}
+{
+  "name": "Main product",
+  "settings": [],
+  "presets": [
     {
-      "name": "Product Pages",
-      "settings": [
-        {
-          "type": "select",
-          "id": "image_size",
-          "label": "Image Size",
-          "options": [
-            {
-              "value": "small",
-              "label": "Small"
-            },
-            {
-              "value": "medium",
-              "label": "Medium"
-            },
-            {
-              "value": "large",
-              "label":"Large"
-            },
-            {
-              "value": "full",
-              "label": "Full-width"
-            }
-          ],
-          "default": "medium"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_quantity_selector",
-          "label": "Show Quantity Selector",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "show_variant_labels",
-          "label": "Show Variant Labels",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_vendor",
-          "label": "Show Vendor",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_zoom",
-          "label": "Enable Image Zoom",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_payment_button",
-          "label": "Show dynamic checkout button",
-          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_share_buttons",
-          "label": "Show Social Media buttons",
-          "default": true
-        }
-      ]
+      "name": "Main product"
     }
-    {% endschema %}
+  ]
+}
+{% endschema %}
