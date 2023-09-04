@@ -17,13 +17,14 @@ function updateCartItemCounts(count) {
 
 // async function that wait on the promise of updating the cart when new item added or when qty changed
 async function updateCartDrawer() {
-    const res = await fetch("/?section_id=Cart-popup"); //fetch new cart with updated items, fecthes entire section
+    const res = await fetch("/?section_id=cart-popup"); //fetch new cart with updated items, fecthes entire section
     const text = await res.text(); // returns text from ajax call (not necessary unless for debugging)
     const html = document.createElement("div");
     html.innerHTML = text;
 
     const newBox = html.querySelector(".cart-drawer").innerHTML; // create new box with updated items
     document.querySelector(".cart-drawer").innerHTML = newBox;
+
     addCartDrawerListeners();
 }
 
@@ -51,7 +52,7 @@ function addCartDrawerListeners() {
                     Accept: "application/json",
                     "Content-Type":"application/json",
                 },
-                body: JSON.stringify({ updates: { [key]: newQty }}),
+                body: JSON.stringify({ updates: { [key]: newQty } }),
             });
 
             const cart = await res.json();
