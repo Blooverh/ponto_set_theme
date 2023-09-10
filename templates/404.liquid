@@ -1,5 +1,59 @@
 <div class="page-width">
   <div class="empty-page-content text-center">
     <h1>{{ 'Page Not Found' }}</h1>
+    <p>A pagina pedida nao foi encontrada</p>
+    <div class="back-to-home">
+      <button class="back-btn" type="button">
+        <a href="https://ponto-set.myshopify.com/">Continuar a Pocurar</a>
+      </button>
+    </div>
   </div>
 </div>
+
+<style>
+  .empty-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    padding: 5px;
+    display: block;
+    font-size: 24px;
+    width: 300px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    background-color: #FAA902;
+    border: none;
+    border-radius: 0.62em;
+    box-shadow: 0 0.25em #999999;
+  }
+
+  .back-btn:hover {
+    background-color: #B67B03
+  }
+
+  .back-btn:active {
+    background-color: #5c6ac4;
+    box-shadow: 0 0.125em #B67B03;
+    transform: translateY(0.25em);
+  }
+
+  .back-btn a {
+    color: black;
+  }
+</style>

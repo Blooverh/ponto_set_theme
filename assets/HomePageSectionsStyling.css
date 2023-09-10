@@ -17,6 +17,7 @@
   background-size: cover;    
   background-repeat: round;
 }
+
 .banner__box {
   @media (min-width: 686px) {
     text-align: center;

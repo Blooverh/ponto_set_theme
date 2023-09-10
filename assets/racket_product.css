@@ -34,6 +34,14 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+.product-option {
+    display: none;
+}
+
+.product-select {
+    display: none;
+}
+
 .product-quantity {
     margin-top: 10px;
     width:300px;
