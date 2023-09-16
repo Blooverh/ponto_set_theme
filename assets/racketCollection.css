@@ -1,0 +1,39 @@
+.header-banner {
+    background: url(../assets/padelRacket.jpg);
+    background-position-y: -242px;
+    background-position-x:-350px;
+    background-size: cover;
+    height: 150px;
+}
+
+.banner-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    align-items: center;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.banner-title i {
+    font-size: 30px;
+    font-weight: 700;
+}
+.custom-search {
+    margin-top: 30px;
+}
+.search-custom {
+    display: flex;
+    align-items: center;
+    background-color: #FAA902;
+    height:50px;
+    border-radius: 18px;
+}
+
+.item-count p i {
+    color: black;
+}

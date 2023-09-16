@@ -1,0 +1,38 @@
+{{ 'racketCollection.css' | asset_url | stylesheet_tag }}
+
+{% paginate collection.products by limit %}
+  <div class="width" style="margin-top: 25px;">
+    {% comment %} image banner that will also contain the title {% endcomment %}
+    <div class="header-banner">
+      <div class="banner-title">
+        <span class="title">Raquetes de Padel</span>
+        <i>({{ collection.products_count }})</i>
+      </div>
+    </div>
+
+    {% comment %} Custom search bar for sorting and pagination {% endcomment %}
+    <div class="custom-search">
+      <div class="width">
+        {% comment %} {% filter tagging info capture %} {% endcomment %}
+        {% capture filters_label %}
+          {% for coll_tag in collection.all_tags %}
+            {% if current_tags contains coll_tag %}
+              {{ coll_tag }}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+
+        {% comment %} box {% endcomment %}
+        <div class="search-custom">
+          <div class="item-count">
+            <p>
+              <i>{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endpaginate %}
