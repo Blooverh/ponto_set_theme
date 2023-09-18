@@ -37,3 +37,11 @@
 .item-count p i {
     color: black;
 }
+
+.custom-filtering span{
+    color: black;
+}
+
+.filter-tagging li {
+    color: black;
+}

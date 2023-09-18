@@ -30,6 +30,59 @@
               <i>{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</i>
             </p>
           </div>
+
+          {% comment %} Filtro {% endcomment %}
+
+          <div class="custom-filtering" data-filter="{{ filters_label }}">
+            <span>Filtro:
+            </span>
+            {% assign check_flags = "" %}
+            <div class="custom-filter-ul">
+              <span class="selected_filter">
+                {% if filters_label == "" %}
+                  All products
+                {% else %}
+                  {{ filters_label | remove: 'raquete_' }}
+                {% endif %}
+              </span>
+
+              <ul class="filter-tagging">
+                <li {% if current_tags == "" %}selected="selected"{% endif %}value="{{ collection.url }}">
+                  {{ 'collections.filters.all_tags' | t }}
+                </li>
+
+                {% for tag in collection.all_tags %}
+                  {% if tag contains "raquete_" %}
+                    {% assign tag_names = tag | remove: "raquete_" %}
+                    {% assign ttag_names = tag_names | remove: 'head_' | strip %}
+                    {% assign new_urls = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first %}
+                    {% if check_flags == ttag_names %}
+
+                      {% else %}
+                        <li
+                          {% if current_tags contains tag %}selected{% endif %}
+                          data-tag="{{ tag }}"
+                          data-value="{{ ttag_names }}"
+                          value="{{ new_urls }}">{{ ttag_names }}</li>
+                        {% assign check_flags = tag_names | remove: 'head_' | strip %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            {% comment %} box wrapper that will contain the tags, will need js functionality for toggling{% endcomment %}
+            {% if is_filter_available or section.settings.sort_enable %}
+              <div style="display: none" class="filter-wrapper{% if is_filter_by_available %} filter-toolbar-has-filter {% endif %}">
+                <div class="width">
+                  <div class="filter-toolbar">
+                    <div class="filter-toolbar-item-wrapper"></div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
         </div>
       </div>
     </div>
