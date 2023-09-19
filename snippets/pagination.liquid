@@ -1,0 +1,49 @@
+{{ 'racketCollection.css' | asset_url | stylesheet_tag }}
+
+<ul class="list-pagination">
+  {% unless paginate.previous.is_link %}
+    <li aria-hidden="true">
+      <button class="btn-pagination-left" disabled>
+        {% render 'icon-left' %}
+        <span class="icon_fallback">{{ 'general.pagination.previous' | t }}</span>
+      </button>
+    </li>
+
+  {% else %}
+
+    <li>
+      <a href="{{ paginate.previous.url }}" class="btn-pagination-left">
+        {% render 'icon-left' %}
+        <span class="icon_fallback">
+          {{ 'general.pagination.previous' | t }}
+        </span>
+      </a>
+    </li>
+
+  {% endunless %}
+
+  <li class="pagination-text">
+    {{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}
+  </li>
+
+  {% unless paginate.next.is_link %}
+    <li aria-hidden="true">
+      <button class="btn-pagination-right" disabled>
+        {% render 'icon-right' %}
+        <span class="icon_fallback">
+          {{ 'general.pagination.next' | t }}
+        </span>
+      </button>
+    </li>
+
+  {% else %}
+
+    <li>
+      <a href="{{ paginate.next.url }}" class="btn-pagination-right">
+        {% render 'icon-right' %}
+        <span class="icon_fallback">{{ 'general.pagination.next' | t }}</span>
+      </a>
+    </li>
+
+  {% endunless %}
+</ul>

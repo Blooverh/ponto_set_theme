@@ -1,91 +1,170 @@
 {{ 'racketCollection.css' | asset_url | stylesheet_tag }}
 
 {% paginate collection.products by limit %}
-  <div class="width" style="margin-top: 25px;">
-    {% comment %} image banner that will also contain the title {% endcomment %}
-    <div class="header-banner">
-      <div class="banner-title">
-        <span class="title">Raquetes de Padel</span>
-        <i>({{ collection.products_count }})</i>
-      </div>
-    </div>
-
-    {% comment %} Custom search bar for sorting and pagination {% endcomment %}
-    <div class="custom-search">
-      <div class="width">
-        {% comment %} {% filter tagging info capture %} {% endcomment %}
-        {% capture filters_label %}
-          {% for coll_tag in collection.all_tags %}
-            {% if current_tags contains coll_tag %}
-              {{ coll_tag }}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-        {% endcapture %}
-
-        {% comment %} box {% endcomment %}
-        <div class="search-custom">
-          <div class="item-count">
-            <p>
-              <i>{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</i>
-            </p>
+  <div data-section-id="{{ section.id }}" data-section-type="collection-template">
+    <header class="collection-header">
+      {% assign = is_filter_by_available = false %}
+      {% if section.settings.tags_enable and collection.all_tags.size > 0 %}
+        {% assign is_filter_by_available = true %}
+      {% endif %}
+      <div class="width" style="margin-top: 25px;">
+        {% comment %} image banner that will also contain the title {% endcomment %}
+        <div class="header-banner">
+          <div class="banner-title">
+            <span class="title">Raquetes de Padel</span>
+            <i>({{ collection.products_count }})</i>
           </div>
+        </div>
+      </div>
 
-          {% comment %} Filtro {% endcomment %}
+      {% comment %} Custom search bar for sorting and pagination {% endcomment %}
+      <div class="custom-search">
+        <div class="width">
+          {% comment %} {% filter tagging info capture %} {% endcomment %}
+          {% capture filters_label %}
+            {% for coll_tag in collection.all_tags %}
+              {% if current_tags contains coll_tag %}
+                {{ coll_tag }}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endcapture %}
 
-          <div class="custom-filtering" data-filter="{{ filters_label }}">
-            <span>Filtro:
-            </span>
-            {% assign check_flags = "" %}
-            <div class="custom-filter-ul">
-              <span class="selected_filter">
-                {% if filters_label == "" %}
-                  All products
-                {% else %}
-                  {{ filters_label | remove: 'raquete_' }}
-                {% endif %}
-              </span>
-
-              <ul class="filter-tagging">
-                <li {% if current_tags == "" %}selected="selected"{% endif %}value="{{ collection.url }}">
-                  {{ 'collections.filters.all_tags' | t }}
-                </li>
-
-                {% for tag in collection.all_tags %}
-                  {% if tag contains "raquete_" %}
-                    {% assign tag_names = tag | remove: "raquete_" %}
-                    {% assign ttag_names = tag_names | remove: 'head_' | strip %}
-                    {% assign new_urls = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first %}
-                    {% if check_flags == ttag_names %}
-
-                      {% else %}
-                        <li
-                          {% if current_tags contains tag %}selected{% endif %}
-                          data-tag="{{ tag }}"
-                          data-value="{{ ttag_names }}"
-                          value="{{ new_urls }}">{{ ttag_names }}</li>
-                        {% assign check_flags = tag_names | remove: 'head_' | strip %}
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}
-              </ul>
+          {% comment %} box {% endcomment %}
+          <div class="search-custom width">
+            <div class="item-count">
+              <p>
+                <i>{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</i>
+              </p>
             </div>
 
-            {% comment %} box wrapper that will contain the tags, will need js functionality for toggling{% endcomment %}
-            {% if is_filter_available or section.settings.sort_enable %}
-              <div style="display: none" class="filter-wrapper{% if is_filter_by_available %} filter-toolbar-has-filter {% endif %}">
-                <div class="width">
-                  <div class="filter-toolbar">
-                    <div class="filter-toolbar-item-wrapper"></div>
+            {% comment %} Filtro {% endcomment %}
+
+            <div class="custom-filtering" data-filter="{{ filters_label }}">
+              <span>Filtro:
+              </span>
+              {% assign check_flags = "" %}
+              <div class="custom-filter-ul">
+                <span class="selected_filter">
+                  {% if filters_label == "" %}
+                    All products
+                  {% else %}
+                    {{ filters_label | remove: 'raquete_' }}
+                  {% endif %}
+                </span>
+
+                <ul class="filter-tagging">
+                  <li {% if current_tags == "" %}selected="selected"{% endif %}value="{{ collection.url }}">
+                    {{ 'collections.filters.all_tags' | t }}
+                  </li>
+
+                  {% for tag in collection.all_tags %}
+                    {% if tag contains "raquete_" %}
+                      {% assign tag_names = tag | remove: "raquete_" %}
+                      {% assign ttag_names = tag_names | remove: 'head_' | strip %}
+                      {% assign new_urls = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first %}
+                      {% if check_flags == ttag_names %}
+
+                        {% else %}
+                          <li
+                            {% if current_tags contains tag %}selected{% endif %}
+                            data-tag="{{ tag }}"
+                            data-value="{{ ttag_names }}"
+                            value="{{ new_urls }}">{{ ttag_names }}</li>
+                          {% assign check_flags = tag_names | remove: 'head_' | strip %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+
+              {% comment %} box wrapper that will contain the tags, will need js functionality for toggling{% endcomment %}
+              {% if is_filter_available or section.settings.sort_enable %}
+                <div style="display: none" class="filter-wrapper{% if is_filter_by_available %} filter-toolbar-has-filter {% endif %}">
+                  <div class="width">
+                    <div class="filter-toolbar">
+                      <div class="filter-toolbar-item-wrapper">
+                        {% if section.settings.tags_enable %}
+                          {% unless collection.all_tags.size == 0 %}
+                            <div class="filter-toolbar-item-child">
+                              <label class="filter-toolbar-label select-label" for="FilterTags">{{ "collections.filters.title_tags" | t }}</label>
+                              <div class="filters-toolbar_input-wrapper select-group">
+                                {% assign check_flag = "" %}
+                                <select
+                                  class="filters-toolbar-input hidden"
+                                  name="FilterTags"
+                                  id="FilterTags"
+                                  aria-describedby="a11y-refresh-page-message a11y-selection-message">
+                                  <option value="{{ collection.url }}">
+                                    {{ 'collections.filters.all_tags' | t }}
+                                  </option>
+                                  {% for ttag in collection.all_tags %}
+                                    {% if ttag contains 'raquete_' %}
+                                      {% assign tag_name = ttag | remove: 'raquete_' %}
+                                      {% assign ttag_name = tag_name | remove: 'head_' | strip %}
+                                      {% assign new_url = ttag | link_to_tag: ttag | split: 'href="' | last | split: '"' | first %}
+                                      {% if check_flag == ttag_name %}
+                                        {% else %}
+                                          <option
+                                            data-tag="{{ ttag }}"
+                                            data-value="{{ tag_name }}"
+                                            value="new_url"
+                                            {% if current_tags contains ttag %}selected="selected"{% endif %}>
+                                            {{ tag_name }}
+                                          </option>
+                                          {% assign check_flag = tag_name | remove: 'head_' | strip %}
+                                      {% endif %}
+                                    {% endif %}
+                                  {% endfor %}
+                                </select>
+                                {% render 'icon-down' %}
+                              </div>
+                            </div>
+                          {% endunless %}
+                        {% endif %}
+
+                        {% if section.settings.sort_enable %}
+                          <div class="filter-toolbar_item-child hide">
+                            {% assign sort_by = collection.sort_by | default: 'price descending' %}
+                            <label class="filters-toolbar_label select-label" for="SortBy">{{ 'collections.sorting.title' | t }}
+                            </label>
+                            <div class="filters-toolbar_input-wrapper select-group">
+                              {% assign check_flag = "" %}
+                              <select
+                                name="sort_by"
+                                id="SortBy"
+                                aria-describedby="a11y-refresh-page-message a11y-selection-message"
+                                data-default-sortby="proce-descending">
+                                {% for option in collection.sort_options %}
+                                  <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}></option>
+                                  {{ option.name }}
+                                </option>
+                              {% endfor %}
+                            </select>
+                            {% render 'icon-down' %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>
             {% endif %}
           </div>
 
+          {% comment %} pagination sector of the custom {% endcomment %}
+
+          <div class="pagination-sector">
+            <span>Page:</span>
+            <div class="page-snippet">
+              {% if paginate.pages > 1 %}
+                {% render 'pagination', paginate: paginate %}
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
 {% endpaginate %}
