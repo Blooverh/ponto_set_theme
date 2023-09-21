@@ -1,0 +1,44 @@
+{{ 'racketCollection.css' | asset_url | stylesheet_tag }}
+
+  <div class="racket-card" data-ajax-enable="true">
+  {% capture img_id %}RacketCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
+  {% assign img_url = product.featured_image | img_url: '1x1' | replace: '_1x1', '_1080x' %}
+  {% capture wrapper_id %}RacketCardImageWrapper-{{ section.id }}-{{ product.id }}
+  {% endcapture %}
+
+  <div class="prod-image">
+    <a href="{{ product.url | within: collection }}">
+      <img id="{{ img_id }}"class="grid-view-item_image lazyload"alt="{{ product.featured_image.alt }}"src="{{ img_url }}">
+    </a>
+  </div>
+
+  <div class="text-info">
+    {% comment %} need more functionality later if racket is used or refurbished {% endcomment %}
+    <span class="new-racket">Nova</span>
+    <div class="title_url">
+      <a href="{{ product.url | within: collection}}">{{ product.title }}
+      </a>
+    </div>
+  </div>
+
+  {% comment %} div for custom description here {% endcomment %}
+
+  {% comment %} div for future reviews here {% endcomment %}
+
+  <div class="prod-pricing">
+    <p class="price">{{ product.price | money }}</p>
+  </div>
+
+  <div class="cart-btn">
+    <form method="post" action="/cart/add">
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.variants.first.id }}" />
+      <input
+        type="submit"
+        value="+ Carrinho"
+        class="add-to-cart-btn" />
+    </form>
+  </div>
+</div>
