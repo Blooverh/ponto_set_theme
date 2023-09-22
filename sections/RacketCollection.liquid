@@ -1,5 +1,6 @@
 {{ 'racketCollection.css' | asset_url | stylesheet_tag }}
-
+{% comment %} search custom bar might have to be changed into a snippet and rendered on
+top and bottom of the page in parallel so both bars work at the same time ?{% endcomment %}
   {% paginate collection.products by limit %}
   <div data-section-id="{{ section.id }}" data-section-type="collection-template">
     <header class="collection-header">

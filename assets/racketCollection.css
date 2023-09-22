@@ -141,7 +141,33 @@
 }
 
 .prod-pricing {
+    display: flex;
     color:black;
     height:50px;
+    justify-content: center;
+    align-items: center;
+    font-weight:700;
 
+}
+
+.cart-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.add-to-cart-btn {
+    color:#FAA902;
+    font-weight:700;
+    font-size: 24px;
+    width: 200px;
+    background: black;
+    border-radius: 18px;
+
+}
+
+.add-to-cart-btn:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }

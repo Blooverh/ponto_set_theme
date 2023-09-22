@@ -1,5 +1,8 @@
 {{ 'racketCollection.css' | asset_url | stylesheet_tag }}
 
+{%  comment  %} Will need js functionality where it takes 
+a small part of the description of the product and display it in the card {% endcomment %}
+
   <div class="racket-card" data-ajax-enable="true">
   {% capture img_id %}RacketCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
   {% assign img_url = product.featured_image | img_url: '1x1' | replace: '_1x1', '_1080x' %}
