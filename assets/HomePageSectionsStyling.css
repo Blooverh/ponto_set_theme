@@ -205,9 +205,11 @@ h4.custom-content-h4 {
 }
 
 @media (max-width: 767px) {
+
   .button {
-    font-size: 0.8em;
-    padding: 0.3em 0.6em;
+    font-size: 20px;
+    padding: 20px 20px;
+    font-weight: 700;
   }
 }
 
