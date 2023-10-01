@@ -45,6 +45,7 @@ label[for] {
 
 .grid {
     display: flex;
+    padding-bottom: 10px;
 }
 
 .grid__item {
@@ -85,10 +86,14 @@ label[for] {
     cursor: pointer;
     padding: 19px 37px 16px 33px;
     background-color: #faa902;
-    font-family:'Courier New', Courier, monospace;
     color: black;
-    font-weight: 900;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 20px;
 
   }
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
 

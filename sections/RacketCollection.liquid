@@ -21,15 +21,6 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
       {% comment %} Custom search bar for sorting and pagination {% endcomment %}
       <div class="custom-search">
         <div class="width">
-          {% comment %} {% filter tagging info capture %} {% endcomment %}
-          {% capture filters_label %}
-            {% for coll_tag in collection.all_tags %}
-              {% if current_tags contains coll_tag %}
-                {{ coll_tag }}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          {% endcapture %}
 
           {% comment %} box {% endcomment %}
           <div class="search-custom width">
@@ -41,17 +32,27 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
 
             {% comment %} Filtro {% endcomment %}
 
+            {% comment %} {% filter tagging info capture %} {% endcomment %}
+            {% capture filters_label %}{% for tttag in collection.all_tags %}{% if current_tags contains  tttag %}{{tttag}}{% break %}{% endif %}{% endfor %}{% endcapture %}
+
+
             <div class="custom-filtering" data-filter="{{ filters_label }}">
               <span>Filtro:
               </span>
               {% assign check_flags = "" %}
               <div class="custom-filter-ul">
                 <span class="selected_filter">
-                  {% if filters_label == "" %}
-                    Todos os Productos
-                  {% else %}
-                    {{ filters_label | remove: 'raquete_' }}
-                  {% endif %}
+
+                {% if filters_label == "" %}
+
+                ALL PRODUCTS 
+
+                {% else %}
+
+                {{filters_label | remove:'raquete_head_'}}
+
+                {% endif %}
+
                 </span>
 
                 <ul class="filter-tagging">
@@ -156,7 +157,7 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
           {% comment %} pagination sector of the custom {% endcomment %}
 
           <div class="pagination-sector">
-            <span>Page:</span>
+            <span>Pagina:</span>
             <div class="page-snippet">
               {% if paginate.pages > 1 %}
                 {% render 'pagination', paginate: paginate %}
@@ -184,15 +185,7 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
 
   <div class="custom-search">
         <div class="width">
-          {% comment %} {% filter tagging info capture %} {% endcomment %}
-          {% capture filters_label %}
-            {% for coll_tag in collection.all_tags %}
-              {% if current_tags contains coll_tag %}
-                {{ coll_tag }}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          {% endcapture %}
+          
 
           {% comment %} box {% endcomment %}
           <div class="search-custom width">
@@ -203,6 +196,8 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
             </div>
 
             {% comment %} Filtro {% endcomment %}
+            {% comment %} {% filter tagging info capture %} {% endcomment %}
+            {% capture filters_label %}{% for tttag in collection.all_tags %}{% if current_tags contains  tttag %}{{tttag}}{% break %}{% endif %}{% endfor %}{% endcapture %}
 
             <div class="custom-filtering" data-filter="{{ filters_label }}">
               <span>Filtro:
@@ -210,11 +205,17 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
               {% assign check_flags = "" %}
               <div class="custom-filter-ul">
                 <span class="selected_filter">
-                  {% if filters_label == "" %}
-                    Todos os Productos
-                  {% else %}
-                    {{ filters_label | remove: 'raquete_' }}
-                  {% endif %}
+
+                {% if filters_label == "" %}
+
+                ALL PRODUCTS 
+
+                {% else %}
+
+                {{filters_label | remove:'raquete_head_'}}
+
+                {% endif %}
+
                 </span>
 
                 <ul class="filter-tagging">
@@ -319,7 +320,7 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
           {% comment %} pagination sector of the custom {% endcomment %}
 
           <div class="pagination-sector">
-            <span>Page:</span>
+            <span>Pagina:</span>
             <div class="page-snippet">
               {% if paginate.pages > 1 %}
                 {% render 'pagination', paginate: paginate %}
@@ -333,3 +334,21 @@ top and bottom of the page in parallel so both bars work at the same time ?{% en
 </div>
 
 {% endpaginate %}
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+jQuery('.filter-tagging li').on('click',function(){
+
+window.location.href=jQuery(this).attr('value');
+});
+
+jQuery('.selected_filter').click(function(){
+
+jQuery('.filter-tagging').toggleClass('toggle_ul');
+
+});
+
+});
+
+
+</script>

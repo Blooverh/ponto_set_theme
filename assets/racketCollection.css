@@ -57,24 +57,64 @@
 .custom-filtering span{
     color: black;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    padding-left: 5px;
     flex-direction: row;
     align-items: center;
     font-weight: 700;
 }
 
-.selected-filter {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    font-weight: 700;
+.filter-tagging {
+    position: absolute;
+    z-index: 9;
+    background: #fff;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ededed;
+    margin: 10px 0 0 0;
+    display:none;
 }
 
+.filter-tagging > li:not(:last-child) {
+    margin-bottom: 5px;
+}
 
-.filter-tagging li {
+.selected_filter {
+    width: 150px;
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.filter-tagging.toggle_ul{
+    display:block;
+    background-color: #FAA902;
     color: black;
 }
+.filter-tagging.toggle_ul li{
+    font-weight: 700;
+}
+
+.filter-tagging li {
+    cursor: pointer;
+}
+
+.selected_filter:after {
+content: "";
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%) rotate(45deg);
+-webkit-transform: translateY(-50%) rotate(45deg);
+-moz-transform: translateY(-50%) rotate(45deg);
+-o-transform: translateY(-50%) rotate(45deg);
+width: 8px;
+height: 8px;
+border-right: 1px solid #000;
+border-bottom: 1px solid #000;}
 
 .pagination-sector {
     display: flex;
@@ -84,10 +124,29 @@
 
 .pagination-sector span {
     color: black;
+    font-weight: 700;
 }
 
 .page-snippet {
     padding-left: 5px;
+}
+
+.block-product-grid {
+    margin-top:10px;
+    display: flex;
+}
+
+li.grid_item.grid_item-RacketCollection {
+    width: 270px;
+}
+
+li.grid_item {
+    border: 1px solid white!important;
+    margin: 0 10px 16px;
+    width: 23.2%;
+    padding: 0 3px;
+    text-align: center;
+    font-size: 13px;
 }
 
 /* Racket collection card styling*/
@@ -126,6 +185,7 @@
     color: black;
     font-size: 20px;
     font-weight: 700;
+    height:30px;
 }
 
 .title_url {
@@ -147,6 +207,7 @@
     justify-content: center;
     align-items: center;
     font-weight:700;
+    font-size: 24px;
 
 }
 
@@ -170,4 +231,13 @@
 .add-to-cart-btn:hover{
     transform: scale(1.1);
     transition: transform 0.5s;
+}
+
+/* MOBILE STYLING */
+
+@media (max-width: 767px){
+    .block-product-grid {
+        flex-direction: column ;
+        align-items: center;
+    }
 }

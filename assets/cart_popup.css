@@ -206,5 +206,21 @@ flex-direction: column;
     color: #212529;
   }
 
+  /* Mobile styling */
+
+  @media (max-width: 767px){
+    .cart-drawer-box {
+      width: 330px;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-item-main-flex {
+      flex-direction: column;
+    }
+}
 
 
